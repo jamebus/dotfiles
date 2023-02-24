@@ -16,8 +16,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git colored-man-pages)
 DISABLE_AUTO_UPDATE='true'
-source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.zsh
 
+[[ -r "$ZSH/oh-my-zsh.sh" ]]             && source $ZSH/oh-my-zsh.sh
+[[ -r ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -r ~/.p10k.zsh ]]                     && source ~/.p10k.zsh
