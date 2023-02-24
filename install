@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -exu
+
+install -m 0400 dot.zshrc ~/.zshrc
