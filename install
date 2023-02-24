@@ -2,4 +2,8 @@
 
 set -exu
 
-install -m 0400 dot.zshrc ~/.zshrc
+git -C ~/.oh-my-zsh/custom/themes \
+    clone https://github.com/jamebus/powerlevel10k.git
+
+install -m 0400 dot.zshrc    ~/.zshrc
+install -m 0400 dot.p10k.zsh ~/.p10k.zsh
