@@ -11,7 +11,7 @@ fi
 
 command -v unbound-host >/dev/null 2>&1 && alias host=unbound-host
 
-[ "$ZDOTDIR" = "$HOME" ] || ZSH="${ZSH:-${ZDOTDIR}/ohmyzsh}"
+[ "${ZDOTDIR:-}" = "$HOME" ] || ZSH="${ZSH:-${ZDOTDIR:+$ZDOTDIR/ohmyzsh}}"
 export ZSH="${ZSH:-$HOME/.oh-my-zsh}"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -31,6 +31,6 @@ command -v terraform >/dev/null 2>&1 && plugins+=(terraform)
 command -v vagrant   >/dev/null 2>&1 && plugins+=(vagrant)
 
 [[ -r "${ZSH}/oh-my-zsh.sh" ]]             && source "${ZSH}/oh-my-zsh.sh"
-[[ -r "${ZDOTDIR}/.p10k.zsh" ]]            && source "${ZDOTDIR}/.p10k.zsh"
-[[ -f "${ZDOTDIR}/.zshrc.local" ]]         && source "${ZDOTDIR}/.zshrc.local"
+[[ -r "${ZDOTDIR:-$HOME}/.p10k.zsh" ]]     && source "${ZDOTDIR:-$HOME}/.p10k.zsh"
+[[ -f "${ZDOTDIR:-$HOME}/.zshrc.local" ]]  && source "${ZDOTDIR:-$HOME}/.zshrc.local"
 [[ -r ~/.iterm2_shell_integration.zsh ]]   && source ~/.iterm2_shell_integration.zsh
