@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -exu
+
+cd "${0%/*}"
+
+. ./vars
+
+"${ZSH}/tools/upgrade.sh"
+git -C "${ZSH}/custom/themes/powerlevel10k" pull --autostash --rebase --stat
+
+./install

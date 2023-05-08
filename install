@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -exu
+
+cd "${0%/*}"
+
+. ./vars
+
+if [ ! -d "$ZSH" ]; then
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" \
+	      --unattended --skip-chsh --keep-zshrc
+fi
+
+if [ ! -d "${ZSH}/custom/themes/powerlevel10k" ]; then
+	git -C "${ZSH}/custom/themes" clone --depth=1 \
+	                              https://github.com/jamebus/powerlevel10k.git
+fi
+
+install -m 0400 dot.zshrc    "${zdot}/.zshrc"
+install -m 0400 dot.p10k.zsh "${zdot}/.p10k.zsh"

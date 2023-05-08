@@ -1,0 +1,6 @@
+# shellcheck shell=sh
+
+#shellcheck disable=SC2034
+zdot="${ZDOTDIR:-$HOME}"
+[ "${ZDOTDIR:-}" = "$HOME" ] || ZSH="${ZSH:-${ZDOTDIR:+$ZDOTDIR/ohmyzsh}}"
+ZSH="${ZSH:-$HOME/.oh-my-zsh}"
