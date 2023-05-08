@@ -22,6 +22,7 @@ DISABLE_AUTO_UPDATE='true'
 command -v ansible   >/dev/null 2>&1 && plugins+=(ansible)
 command -v docker    >/dev/null 2>&1 && plugins+=(docker)
 command -v git       >/dev/null 2>&1 && plugins+=(git)
+command -v helm      >/dev/null 2>&1 && plugins+=(helm)
 command -v httpie    >/dev/null 2>&1 && plugins+=(httpie)
 command -v kubectl   >/dev/null 2>&1 && plugins+=(kubectl)
 command -v python3   >/dev/null 2>&1 && plugins+=(python)
