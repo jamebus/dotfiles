@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -exu
+set -eu
 
 cd "${0%/*}"
 
@@ -16,5 +16,5 @@ if [ ! -d "${ZSH}/custom/themes/powerlevel10k" ]; then
 	                              https://github.com/jamebus/powerlevel10k.git
 fi
 
-install -m 0400 dot.zshrc    "${zdot}/.zshrc"
-install -m 0400 dot.p10k.zsh "${zdot}/.p10k.zsh"
+install -v -m 0400 dot.zshrc    "${zdot}/.zshrc"
+install -v -m 0400 dot.p10k.zsh "${zdot}/.p10k.zsh"
