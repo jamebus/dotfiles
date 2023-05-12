@@ -14,8 +14,8 @@ command -v unbound-host >/dev/null 2>&1 && alias host=unbound-host
 [ "${ZDOTDIR:-}" = "$HOME" ] || ZSH="${ZSH:-${ZDOTDIR:+$ZDOTDIR/ohmyzsh}}"
 export ZSH="${ZSH:-$HOME/.oh-my-zsh}"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-COMPLETION_WAITING_DOTS="true"
+ZSH_THEME='powerlevel10k/powerlevel10k'
+COMPLETION_WAITING_DOTS='true'
 plugins=(colored-man-pages)
 DISABLE_AUTO_UPDATE='true'
 
