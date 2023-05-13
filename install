@@ -17,8 +17,8 @@ if [ ! -d "${ZSH}/custom/themes/powerlevel10k" ]; then
 fi
 
 if [ -n "${ITERM_PROFILE:-}" ]; then
-	curl -L -o "${zdot}/.iterm2_shell_integration.zsh" \
-	     https://iterm2.com/shell_integration/zsh
+	install -v -m 0400 dot.iterm2_shell_integration.zsh \
+	                   "${zdot}/.iterm2_shell_integration.zsh"
 fi
 
 install -v -m 0400 dot.zshrc    "${zdot}/.zshrc"
