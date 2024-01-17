@@ -23,3 +23,7 @@ fi
 
 install -v -m 0400 dot.zshrc    "${zdot}/.zshrc"
 install -v -m 0400 dot.p10k.zsh "${zdot}/.p10k.zsh"
+
+if [ -d "${HOME}/.pagpapanatili/profiles.d" ]; then
+	install -v -m 0400 zzz-home.yaml "${HOME}/.pagpapanatili/profiles.d"
+fi

@@ -1,0 +1,43 @@
+{{ $relativehome := .Env.HOME | replaceR "^/(.+)" "$1" -}}
+---
+# yaml-language-server: $schema=https://creativeprojects.github.io/resticprofile/jsonschema/config-1.json
+
+version: "1"
+
+home:
+  backup:
+    exclude:
+      - "{{ $relativehome }}/.Trash"
+      - "{{ $relativehome }}/.bundle/cache"
+      - "{{ $relativehome }}/.cache"
+      - "{{ $relativehome }}/.cargo/git"
+      - "{{ $relativehome }}/.cargo/registry"
+      - "{{ $relativehome }}/.gem/ruby/*/cache"
+      - "{{ $relativehome }}/.minikube/cache"
+      - "{{ $relativehome }}/.npm/_cacache"
+      - "{{ $relativehome }}/.vagrant.d/boxes"
+      - "{{ $relativehome }}/.terraform.d/plugin-cache"
+      - "{{ $relativehome }}/Library/Application Support/**/Cache"
+      - "{{ $relativehome }}/Library/Application Support/**/Caches"
+      - "{{ $relativehome }}/Library/Application Support/**/Code Cache"
+      - "{{ $relativehome }}/Library/Application Support/**/GPUCache"
+      - "{{ $relativehome }}/Library/Application Support/**/GrShaderCache"
+      - "{{ $relativehome }}/Library/Application Support/**/Service Worker/CacheStorage"
+      - "{{ $relativehome }}/Library/Application Support/**/Service Worker/ScriptCache"
+      - "{{ $relativehome }}/Library/Application Support/**/ShaderCache"
+      - "{{ $relativehome }}/Library/Application Support/*/CachedData"
+      - "{{ $relativehome }}/Library/Caches"
+      - "{{ $relativehome }}/Library/CloudStorage"
+      - "{{ $relativehome }}/Library/Containers/**/Data/Cache"
+      - "{{ $relativehome }}/Library/Containers/**/Data/Library/Caches"
+      - "{{ $relativehome }}/Library/Containers/**/Library/Caches"
+      - "{{ $relativehome }}/Library/Containers/com.docker.docker/Data/vms/*/Docker.raw"
+      - "{{ $relativehome }}/Library/Group Containers/*/Library/Caches"
+      - "{{ $relativehome }}/VirtualBox VMs"
+      - "{{ $relativehome }}/projects/*/target/debug"
+      - "{{ $relativehome }}/projects/*/target/release"
+      - "{{ $relativehome }}/projects/algo/.env"
+      - "{{ $relativehome }}/transmission-openvpn/config/transmission-home/*.log"
+      - "{{ $relativehome }}/transmission-openvpn/data"
+      - .terraform/modules
+      - .terraform/providers
