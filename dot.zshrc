@@ -22,6 +22,11 @@ SHOW_AWS_PROMPT=false
 AWS_PROFILE_STATE_ENABLED=true
 AWS_STATE_FILE=~/.aws/current_profile
 
+if [ -d "${HOME}/.starship/bin" ]; then
+	PATH="${HOME}/.starship/bin:${PATH}"
+	export PATH
+fi
+
 command -v ansible   >/dev/null 2>&1 && plugins+=(ansible)
 command -v aws       >/dev/null 2>&1 && plugins+=(aws)
 command -v docker    >/dev/null 2>&1 && plugins+=(docker)
