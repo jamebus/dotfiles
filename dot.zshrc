@@ -2,13 +2,6 @@
 # ZSH interactive shell
 #
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 command -v unbound-host >/dev/null 2>&1 && alias host=unbound-host
 
 [ "${ZDOTDIR:-}" = "$HOME" ] || ZSH="${ZSH:-${ZDOTDIR:+$ZDOTDIR/ohmyzsh}}"
@@ -43,7 +36,6 @@ command -v terraform >/dev/null 2>&1 && plugins+=(terraform)
 command -v vagrant   >/dev/null 2>&1 && plugins+=(vagrant)
 
 for f in "${ZSH}/oh-my-zsh.sh" \
-         "${ZDOTDIR:-$HOME}/.p10k.zsh" \
          "${ZDOTDIR:-$HOME}/.zshrc.local" \
          "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"; do
 	test -r "$f" && source "$f"

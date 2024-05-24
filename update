@@ -8,7 +8,6 @@ cd "${0%/*}"
 
 if [ -z "${AYUSIN_ME:-}" ]; then
 	"${ZSH}/tools/upgrade.sh"
-	git -C "${ZSH}/custom/themes/powerlevel10k" pull --autostash --rebase --stat
 fi
 
 ./install

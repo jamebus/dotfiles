@@ -27,8 +27,7 @@ if [ -n "${ITERM_PROFILE:-}" ]; then
 	                   "${zdot}/.iterm2_shell_integration.zsh"
 fi
 
-install -v -m 0400 dot.zshrc    "${zdot}/.zshrc"
-install -v -m 0400 dot.p10k.zsh "${zdot}/.p10k.zsh"
+install -v -m 0400 dot.zshrc "${zdot}/.zshrc"
 install -v -d -m 0755 "${HOME}/.config"
 install -v -m 0400 starship.toml "${HOME}/.config"
 
