@@ -33,6 +33,7 @@ command -v kubectl   >/dev/null 2>&1 && plugins+=(kubectl)
 command -v python3   >/dev/null 2>&1 && plugins+=(python)
 command -v ruby      >/dev/null 2>&1 && plugins+=(ruby)
 command -v rustc     >/dev/null 2>&1 && plugins+=(rust)
+command -v starship  >/dev/null 2>&1 && plugins+=(starship)
 command -v terraform >/dev/null 2>&1 && plugins+=(terraform)
 command -v vagrant   >/dev/null 2>&1 && plugins+=(vagrant)
 
