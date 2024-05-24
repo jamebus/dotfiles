@@ -11,9 +11,15 @@ if [ ! -d "$ZSH" ]; then
 	      --unattended --skip-chsh --keep-zshrc
 fi
 
-if [ ! -d "${ZSH}/custom/themes/powerlevel10k" ]; then
-	git -C "${ZSH}/custom/themes" clone --depth=1 \
-	                              https://github.com/jamebus/powerlevel10k.git
+if ! command -v starship >/dev/null 2>&1; then
+	PATH="${HOME}/.starship/bin:${PATH}"
+	export PATH
+
+	if ! command -v starship >/dev/null 2>&1; then
+		install -d -m 0755 "${HOME}/.starship/bin"
+		curl -sS https://starship.rs/install.sh | \
+		  env FORCE=1 BIN_DIR="${HOME}/.starship/bin" sh
+	fi
 fi
 
 if [ -n "${ITERM_PROFILE:-}" ]; then
