@@ -18,7 +18,12 @@ COMPLETION_WAITING_DOTS='true'
 plugins=(colored-man-pages)
 DISABLE_AUTO_UPDATE='true'
 
+SHOW_AWS_PROMPT=false
+AWS_PROFILE_STATE_ENABLED=true
+AWS_STATE_FILE=~/.aws/current_profile
+
 command -v ansible   >/dev/null 2>&1 && plugins+=(ansible)
+command -v aws       >/dev/null 2>&1 && plugins+=(aws)
 command -v docker    >/dev/null 2>&1 && plugins+=(docker)
 command -v fzf       >/dev/null 2>&1 && plugins+=(fzf)
 command -v git       >/dev/null 2>&1 && plugins+=(git)
