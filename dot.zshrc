@@ -23,6 +23,7 @@ fi
 command -v ansible   >/dev/null 2>&1 && plugins+=(ansible)
 command -v aws       >/dev/null 2>&1 && plugins+=(aws)
 command -v docker    >/dev/null 2>&1 && plugins+=(docker)
+command -v eza       >/dev/null 2>&1 && plugins+=(eza)
 command -v fzf       >/dev/null 2>&1 && plugins+=(fzf)
 command -v git       >/dev/null 2>&1 && plugins+=(git)
 command -v helm      >/dev/null 2>&1 && plugins+=(helm)
