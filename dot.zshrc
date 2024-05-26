@@ -12,8 +12,6 @@ plugins=(colored-man-pages)
 DISABLE_AUTO_UPDATE='true'
 
 SHOW_AWS_PROMPT=false
-AWS_PROFILE_STATE_ENABLED=true
-AWS_STATE_FILE=~/.aws/current_profile
 
 if [ -d "${HOME}/.starship/bin" ]; then
 	PATH="${PATH}:${HOME}/.starship/bin"
