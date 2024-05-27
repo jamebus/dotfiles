@@ -30,6 +30,9 @@ symbol = " "
 [directory]
 read_only = " 󰌾"
 
+[direnv]
+disabled = false
+
 [docker_context]
 symbol = " "
 
