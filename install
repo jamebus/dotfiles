@@ -1,36 +1,30 @@
 #!/bin/sh
 
+# -e: exit on error
+# -u: exit on unset variables
 set -eu
 
-cd "${0%/*}"
-
-. ./vars
-
-if [ ! -d "$ZSH" ]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" \
-	      --unattended --skip-chsh --keep-zshrc
-fi
-
-if ! command -v starship >/dev/null 2>&1; then
-	PATH="${PATH}:${HOME}/.starship/bin"
-	export PATH
-
-	if ! command -v starship >/dev/null 2>&1; then
-		install -d -m 0755 "${HOME}/.starship/bin"
-		curl -sS https://starship.rs/install.sh | \
-		  env FORCE=1 BIN_DIR="${HOME}/.starship/bin" sh
+if ! chezmoi="$(command -v chezmoi)"; then
+	bin_dir="${HOME}/.local/bin"
+	chezmoi="${bin_dir}/chezmoi"
+	echo "Installing chezmoi to '${chezmoi}'" >&2
+	if command -v curl >/dev/null; then
+		chezmoi_install_script="$(curl -fsSL get.chezmoi.io)"
+	elif command -v wget >/dev/null; then
+		chezmoi_install_script="$(wget -qO- get.chezmoi.io)"
+	else
+		echo "To install chezmoi, you must have curl or wget installed." >&2
+		exit 1
 	fi
+	sh -c "${chezmoi_install_script}" -- -b "${bin_dir}"
+	unset chezmoi_install_script bin_dir
 fi
 
-if [ -n "${ITERM_PROFILE:-}" ]; then
-	install -v -m 0400 dot.iterm2_shell_integration.zsh \
-	                   "${zdot}/.iterm2_shell_integration.zsh"
-fi
+# POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
+script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 
-install -v -m 0400 dot.zshrc "${zdot}/.zshrc"
-install -v -d -m 0755 "${HOME}/.config"
-install -v -m 0400 starship.toml "${HOME}/.config"
+set -- init --apply --source="${script_dir}"
 
-if [ -d "${HOME}/.pagpapanatili/profiles.d" ]; then
-	install -v -m 0400 zzz-home.yaml "${HOME}/.pagpapanatili/profiles.d"
-fi
+echo "Running 'chezmoi $*'" >&2
+# exec: replace current process with chezmoi
+exec "$chezmoi" "$@"

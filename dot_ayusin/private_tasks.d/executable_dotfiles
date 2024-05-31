@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# This is set in common, but shellcheck doesn't detect it
+set -e
+
+# shellcheck disable=SC1090
+. "$(ayusin --common)"
+# shellcheck disable=SC2034
+task_description='Update dotfiles'
+
+task_start
+
+command -v chezmoi >/dev/null 2>&1 || task_skip
+chezmoi apply                      || task_fail
+
+task_end

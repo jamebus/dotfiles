@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# shellcheck disable=SC1090
+. "$(ayusin --common)"
+# shellcheck disable=SC2034
+task_description='Connectivity check'
+
+task_start
+
+$DRYRUN fping -r 0 8.8.8.8 || task_fail 1
+
+task_end

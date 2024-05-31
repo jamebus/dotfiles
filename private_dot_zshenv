@@ -1,0 +1,13 @@
+# shellcheck shell=bash # close enough for now
+#
+# ZSH environment (loaded first)
+#
+
+if [ -d "${HOME}/.local/bin" ]; then
+	PATH="${HOME}/.local/bin:${PATH}"
+	export PATH
+fi
+
+# shellcheck source=/dev/null
+test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \
+  source "${ZDOTDIR:-$HOME}/.zshenv.local"

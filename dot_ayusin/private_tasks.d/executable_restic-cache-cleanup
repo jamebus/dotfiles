@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# shellcheck disable=SC1090
+. "$(ayusin --common)"
+# shellcheck disable=SC2034
+task_description='Restic cache cleanup'
+
+task_start
+
+command -v restic >/dev/null 2>&1 || task_skip
+$DRYRUN restic cache --cleanup    || task_fail
+
+task_end

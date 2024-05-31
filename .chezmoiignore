@@ -1,0 +1,8 @@
+install
+.oh-my-zsh/cache
+{{- if not (lookPath "pag") }}
+.pagpapanatili
+{{- end }}
+{{- if not (lookPath "ayusin") }}
+.ayusin
+{{- end }}

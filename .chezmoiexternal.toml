@@ -1,0 +1,39 @@
+{{- if eq .chezmoi.os "darwin" }}
+[".iterm2_shell_integration.zsh"]
+  type = "file"
+  url = "https://iterm2.com/shell_integration/zsh"
+  refreshPeriod = "24h"
+{{- end }}
+[".oh-my-zsh"]
+  type = "archive"
+  url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+  type = "archive"
+  url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+{{- if not (lookPath "starship") }}
+  {{- $arch := .chezmoi.arch }}
+  {{- $runtime := "" }}
+  {{- if eq $arch "arm64" }}
+    {{- $arch = "aarch64" }}
+  {{- else if eq $arch "amd64" }}
+    {{- $arch = "x86_64" }}
+  {{- end }}
+  {{- if eq .chezmoi.os "linux" }}
+    {{- if eq .chezmoi.osRelease.id "alpine" }}
+      {{- $runtime = "-musl" }}
+    {{- else }}
+      {{- $runtime = "-gnu" }}
+    {{- end }}
+  {{- end }}
+[".local/bin/starship"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "starship/starship" (printf "starship-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) | quote }}
+    path = "starship"
+    refreshPeriod = "24h"
+{{- end }}
