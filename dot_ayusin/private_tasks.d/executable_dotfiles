@@ -11,6 +11,6 @@ task_description='Update dotfiles'
 task_start
 
 command -v chezmoi >/dev/null 2>&1 || task_skip
-chezmoi apply                      || task_fail
+chezmoi update                     || task_fail
 
 task_end
