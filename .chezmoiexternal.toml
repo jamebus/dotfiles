@@ -32,8 +32,8 @@
     {{- end }}
   {{- end }}
 [".local/bin/starship"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "starship/starship" (printf "starship-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) | quote }}
-    path = "starship"
-    refreshPeriod = "24h"
+  type = "archive-file"
+  url = {{ gitHubLatestReleaseAssetURL "starship/starship" (printf "starship-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) | quote }}
+  path = "starship"
+  refreshPeriod = "24h"
 {{- end }}
