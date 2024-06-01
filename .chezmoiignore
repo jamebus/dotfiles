@@ -10,3 +10,7 @@ install
 .terraformrc
 .terraform.d
 {{- end }}
+{{- if not (lookPath "git") }}
+.gitconfig
+.gitignore-global
+{{- end }}
