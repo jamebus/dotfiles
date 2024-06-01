@@ -6,3 +6,7 @@ install
 {{- if not (lookPath "ayusin") }}
 .ayusin
 {{- end }}
+{{- if not (lookPath "terraform") }}
+.terraformrc
+.terraform.d
+{{- end }}
