@@ -19,16 +19,19 @@
 {{- if not (lookPath "starship") }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
+  {{- if eq .chezmoi.os "linux" }}{{ $runtime = "-musl" }}{{ end }}
   {{- if eq $arch "arm64" }}
     {{- $arch = "aarch64" }}
+  {{- else if eq $arch "arm" }}
+    {{- $runtime = "-musleabihf" }}
   {{- else if eq $arch "amd64" }}
     {{- $arch = "x86_64" }}
-  {{- end }}
-  {{- if eq .chezmoi.os "linux" }}
-    {{- if eq .chezmoi.osRelease.id "alpine" }}
-      {{- $runtime = "-musl" }}
-    {{- else }}
-      {{- $runtime = "-gnu" }}
+    {{- if eq .chezmoi.os "linux" }}
+      {{- if eq .chezmoi.osRelease.id "alpine" }}
+        {{- $runtime = "-musl" }}
+      {{- else }}
+        {{- $runtime = "-gnu" }}
+      {{- end }}
     {{- end }}
   {{- end }}
 [".local/bin/starship"]
