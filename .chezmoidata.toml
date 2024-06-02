@@ -1,0 +1,5 @@
+# Defaults. Override this in ~/.config/chezmoi/chezmoi.toml
+
+[contact]
+  name  = "James Kelly"
+  email = "james@hicag.org"
