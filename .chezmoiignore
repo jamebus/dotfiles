@@ -16,3 +16,14 @@ install
 {{- if not (lookPath "git") }}
 .gitignore-global
 {{- end }}
+{{- if eq .role.designation "personal" }}
+  {{- if not .role.actual }}
+.ayusin/tasks.d/pass-git-push
+  {{- end }}
+{{- else }}
+.ayusin/tasks.d/pass-git-push
+{{- end }}
+{{- if ne .role.designation "ec" }}
+.ayusin/tasks.d/automox-sucks
+.ayusin/tasks.d/infra-vagrant-box
+{{- end }}

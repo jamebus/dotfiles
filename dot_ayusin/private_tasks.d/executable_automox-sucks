@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# shellcheck disable=SC1090
+. "$(ayusin --common)"
+# shellcheck disable=SC2034
+task_description='Automox sucks'
+
+task_start
+
+# Automox likes to run aws(1) as root which screws up file ownership on new
+# installs of Python and awscli. Let's try to run it as ourself first.
+command -v amagent >/dev/null 2>&1 || task_skip
+$DRYRUN aws help >/dev/null        || task_fail
+
+task_end

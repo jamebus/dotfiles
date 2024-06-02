@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# shellcheck disable=SC1090
+. "$(ayusin --common)"
+# shellcheck disable=SC2034
+task_description='infra Vagrant box update'
+
+task_start
+
+command -v vagrant >/dev/null 2>&1 || task_skip
+cd ~/projects/infra-configs        || task_skip
+$DRYRUN vagrant box update         || task_fail
+
+task_end

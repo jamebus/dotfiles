@@ -5,3 +5,12 @@
 .aws/current_profile
 .p10k.zsh
 .p10k.zsh.bak
+{{- if eq .role.designation "personal" }}
+  {{- if not .role.actual }}
+.ayusin/tasks.d/pass-git-push
+  {{- end }}
+.ayusin/tasks.d/automox-sucks
+.ayusin/tasks.d/infra-vagrant-box
+{{- else }}
+.ayusin/tasks.d/pass-git-push
+{{- end }}

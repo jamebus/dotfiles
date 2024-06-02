@@ -3,3 +3,7 @@
 [contact]
   name  = "James Kelly"
   email = "james@hicag.org"
+
+[role]
+  designation = "fhqwhgads"
+  actual      = false
