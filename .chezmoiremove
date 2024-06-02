@@ -1,6 +1,6 @@
-{{- if ne .chezmoi.os "darwin" }}
+{{ if ne .chezmoi.os "darwin" -}}
 .iterm2_shell_integration.zsh
-{{- end }}
+{{ end -}}
 .aws/awsctx
 .aws/current_profile
 .p10k.zsh
