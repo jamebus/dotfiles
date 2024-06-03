@@ -3,7 +3,8 @@
 # ZSH environment (loaded first)
 #
 
-eval "$(/usr/libexec/path_helper -s)"
+test -x /usr/libexec/path_helper && eval "$(/usr/libexec/path_helper -s)"
+
 export PATH="${HOME}/.gem/ruby/3.3.0/bin:/usr/local/opt/ruby/bin:/usr/local/opt/libpq/bin:${PATH}"
 
 test -d "${HOME}/bin"        && export PATH="${HOME}/bin:${PATH}"
