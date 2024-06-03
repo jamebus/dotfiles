@@ -3,4 +3,21 @@
 # ZSH login shell
 #
 
-test -x /usr/libexec/path_helper && eval "$(/usr/libexec/path_helper -s)"
+prepend_to_path() {
+	test -z "$1" && return
+	test -d "$1" && export PATH="${1}:${PATH}"
+}
+
+prepend_to_path '/usr/local/opt/ruby/bin'
+command -v gem >/dev/null 2>&1 && \
+  prepend_to_path "$(gem environment user_gemhome)/bin"
+prepend_to_path '/usr/local/opt/libpq/bin'
+
+prepend_to_path "${HOME}/bin"
+prepend_to_path "${HOME}/.local/bin"
+
+# shellcheck source=/dev/null
+test -r "${ZDOTDIR:-$HOME}/.zprofile.local" && \
+  source "${ZDOTDIR:-$HOME}/.zprofile.local"
+
+unset -f prepend_to_path

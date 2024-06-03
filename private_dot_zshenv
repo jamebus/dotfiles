@@ -3,10 +3,7 @@
 # ZSH environment (loaded first)
 #
 
-export PATH="${HOME}/.gem/ruby/3.3.0/bin:/usr/local/opt/ruby/bin:/usr/local/opt/libpq/bin:${PATH}"
-
-test -d "${HOME}/bin"        && export PATH="${HOME}/bin:${PATH}"
-test -d "${HOME}/.local/bin" && export PATH="${HOME}/.local/bin:${PATH}"
+# Warning: Don't set PATH here, it'll get clobbered in macOS by /etc/zprofile
 
 # shellcheck source=/dev/null
 test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \
