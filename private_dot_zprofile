@@ -1,0 +1,4 @@
+# shellcheck shell=bash # close enough for now
+#
+# ZSH login shell
+#

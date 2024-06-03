@@ -3,10 +3,11 @@
 # ZSH environment (loaded first)
 #
 
-if [ -d "${HOME}/.local/bin" ]; then
-	PATH="${HOME}/.local/bin:${PATH}"
-	export PATH
-fi
+eval "$(/usr/libexec/path_helper -s)"
+export PATH="${HOME}/.gem/ruby/3.3.0/bin:/usr/local/opt/ruby/bin:/usr/local/opt/libpq/bin:${PATH}"
+
+test -d "${HOME}/bin"        && export PATH="${HOME}/bin:${PATH}"
+test -d "${HOME}/.local/bin" && export PATH="${HOME}/.local/bin:${PATH}"
 
 # shellcheck source=/dev/null
 test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \
