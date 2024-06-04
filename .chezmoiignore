@@ -16,6 +16,10 @@ install
 {{- if not (lookPath "git") }}
 .gitignore-global
 {{- end }}
+{{- if not (lookPath "vim") }}
+.vimrc
+.vim
+{{- end }}
 {{- if eq .role.designation "personal" }}
   {{- if not .role.actual }}
 .ayusin/tasks.d/pass-git-push

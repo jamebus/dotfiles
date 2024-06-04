@@ -40,3 +40,9 @@
   path = "starship"
   refreshPeriod = "24h"
 {{- end }}
+{{- if lookPath "vim" }}
+[".vim/uri-ref-20061101.vim"]
+  type = "file"
+  url = "https://www.vim.org/scripts/download_script.php?src_id=6358"
+  checksum.sha256 = "c2a60ca3bfea1fdc6ca5317be356b27781ec0a3f975b983c8fd5284c16be27aa"
+{{- end }}
