@@ -12,6 +12,7 @@ prepend_to_path '/usr/local/opt/ruby/bin'
 command -v gem >/dev/null 2>&1 && \
   prepend_to_path "$(gem environment user_gemhome)/bin"
 prepend_to_path '/usr/local/opt/libpq/bin'
+prepend_to_path '/usr/local/opt/mysql-client/bin'
 
 prepend_to_path "${HOME}/bin"
 prepend_to_path "${HOME}/.local/bin"
