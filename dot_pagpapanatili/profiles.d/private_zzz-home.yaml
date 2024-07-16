@@ -38,7 +38,5 @@ home:
       - "{{ $relativehome }}/projects/*/target/debug"
       - "{{ $relativehome }}/projects/*/target/release"
       - "{{ $relativehome }}/projects/algo/.env"
-      - "{{ $relativehome }}/transmission-openvpn/config/transmission-home/*.log"
-      - "{{ $relativehome }}/transmission-openvpn/data"
       - .terraform/modules
       - .terraform/providers
