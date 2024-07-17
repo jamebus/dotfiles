@@ -24,6 +24,7 @@ command -v direnv    >/dev/null 2>&1 && plugins+=(direnv)
 command -v docker    >/dev/null 2>&1 && plugins+=(docker)
 command -v eza       >/dev/null 2>&1 && plugins+=(eza)
 command -v fzf       >/dev/null 2>&1 && plugins+=(fzf)
+command -v atuin     >/dev/null 2>&1 && plugins+=(atuin) # after fzf to override key binding
 command -v git       >/dev/null 2>&1 && plugins+=(git)
 command -v helm      >/dev/null 2>&1 && plugins+=(helm)
 command -v httpie    >/dev/null 2>&1 && plugins+=(httpie)

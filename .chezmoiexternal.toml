@@ -16,6 +16,10 @@
   exact = true
   stripComponents = 1
   refreshPeriod = "24h"
+[".oh-my-zsh/custom/plugins/atuin/atuin.plugin.zsh"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/atuinsh/atuin/main/atuin.plugin.zsh"
+  refreshPeriod = "24h"
 {{- if not (lookPath "starship") }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
