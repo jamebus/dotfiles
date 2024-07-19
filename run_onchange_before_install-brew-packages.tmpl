@@ -1,0 +1,12 @@
+{{ if (lookPath "brew") -}}
+#!/bin/sh
+
+cat <<_EOF_ | brew bundle --no-lock --file=-
+brew "starship"
+brew "eza"
+brew "fzf"
+brew "ripgrep"
+brew "atuin"
+_EOF_
+
+{{- end }}
