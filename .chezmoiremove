@@ -14,3 +14,22 @@
 {{- else }}
 .ayusin/tasks.d/pass-git-push
 {{- end }}
+{{- $path_without_local_bin := without (splitList ":" (env "PATH")) (print (env "HOME") "/.local/bin") }}
+{{- if findExecutable "atuin" $path_without_local_bin }}
+.local/bin/atuin
+{{- end }}
+{{- if findExecutable "chezmoi" $path_without_local_bin }}
+.local/bin/chezmoi
+{{- end }}
+{{- if findExecutable "eza" $path_without_local_bin }}
+.local/bin/eza
+{{- end }}
+{{- if findExecutable "fzf" $path_without_local_bin }}
+.local/bin/fzf
+{{- end }}
+{{- if findExecutable "rg" $path_without_local_bin }}
+.local/bin/rg
+{{- end }}
+{{- if findExecutable "starship" $path_without_local_bin }}
+.local/bin/starship
+{{- end }}
