@@ -20,7 +20,7 @@
   type = "file"
   url = "https://raw.githubusercontent.com/atuinsh/atuin/main/atuin.plugin.zsh"
   refreshPeriod = "24h"
-{{- if not (lookPath "starship") }}
+{{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq .chezmoi.os "linux" }}{{ $runtime = "-musl" }}{{ end }}
@@ -47,7 +47,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if not (lookPath "eza") }}
+{{- if or (findExecutable "eza" (list ".local/bin")) (not (lookPath "eza")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
@@ -73,7 +73,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if not (lookPath "fzf") }}
+{{- if or (findExecutable "fzf" (list ".local/bin")) (not (lookPath "fzf")) }}
   {{- $arch := .chezmoi.arch }}
   {{- if eq $arch "arm" }}
     {{- $arch = "armv7" }}
@@ -87,7 +87,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if not (lookPath "rg") }}
+{{- if or (findExecutable "rg" (list ".local/bin")) (not (lookPath "rg")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
@@ -118,7 +118,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if not (lookPath "atuin") }}
+{{- if or (findExecutable "atuin" (list ".local/bin")) (not (lookPath "atuin")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
