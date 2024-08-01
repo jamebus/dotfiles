@@ -7,6 +7,7 @@ add_newline = true
 format = """
 $username\
 $hostname\
+${custom.cloud_instance}\
 $localip\
 $shlvl\
 $singularity\
@@ -283,3 +284,11 @@ when = true
 require_repo = true
 command = '''git log -1 --pretty=format:%B | grep -E '[^[:alnum:]](wip|WIP)[^[:alnum:]]' >/dev/null && echo wip'''
 style = "bold red"
+
+[custom.cloud_instance]
+description = "cloud instance id. probably just ec2"
+when = "test -L /var/lib/cloud/instance"
+command = '''realpath /var/lib/cloud/instance | sed 's,^.*/,,''''
+symbol = " "
+style = "bold dimmed green"
+format = "[$symbol($output)]($style) in "
