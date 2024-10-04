@@ -35,6 +35,9 @@ command -v rustc     >/dev/null 2>&1 && plugins+=(rust)
 command -v starship  >/dev/null 2>&1 && plugins+=(starship)
 command -v terraform >/dev/null 2>&1 && plugins+=(terraform)
 command -v vagrant   >/dev/null 2>&1 && plugins+=(vagrant)
+command -v xh        >/dev/null 2>&1 && alias http='env XH_HTTPIE_COMPAT_MODE=1 xh' && \
+                                        alias https='env XH_HTTPIE_COMPAT_MODE=1 xhs' && \
+                                        plugins+=(httpie)
 command -v zoxide    >/dev/null 2>&1 && plugins+=(zoxide) && alias cd=z
 
 for f in "${ZSH}/oh-my-zsh.sh" \
