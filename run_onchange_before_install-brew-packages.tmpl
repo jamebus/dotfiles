@@ -2,11 +2,12 @@
 #!/bin/sh
 
 cat <<_EOF_ | brew bundle --no-lock --file=-
-brew "starship"
+brew "atuin"
 brew "eza"
 brew "fzf"
 brew "ripgrep"
-brew "atuin"
+brew "starship"
+brew "zoxide"
 _EOF_
 
 {{- end }}

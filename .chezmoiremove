@@ -33,3 +33,6 @@
 {{- if findExecutable "starship" $path_without_local_bin }}
 .local/bin/starship
 {{- end }}
+{{- if findExecutable "zoxide" $path_without_local_bin }}
+.local/bin/zoxide
+{{- end }}

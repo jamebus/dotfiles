@@ -143,3 +143,26 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
+{{- if or (findExecutable "zoxide" (list ".local/bin")) (not (lookPath "zoxide")) }}
+  {{- $arch := .chezmoi.arch }}
+  {{- $runtime := "" }}
+  {{- if eq $arch "arm64" }}
+    {{- $arch = "aarch64" }}
+  {{- else if eq $arch "amd64" }}
+    {{- $arch = "x86_64" }}
+  {{- end }}
+  {{- if eq .chezmoi.os "linux" }}
+    {{- $runtime = "-musl" }}
+    {{- if or (eq .chezmoi.arch "arm") (eq .chezmoi.arch "armv7") }}
+      {{- $runtime = "-musleabihf" }}
+    {{- end }}
+  {{- end }}
+  {{- $archive_url := gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" (printf "zoxide-*-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) }}
+  {{- if ne $archive_url "" }}
+[".local/bin/zoxide"]
+  type = "archive-file"
+  url = {{ quote $archive_url }}
+  path = "zoxide"
+  refreshPeriod = "24h"
+  {{- end }}
+{{- end }}
