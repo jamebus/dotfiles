@@ -22,6 +22,7 @@ install
   {{- end }}
 {{- else }}
 .ayusin/tasks.d/pass-git-push
+.password-store
 {{- end }}
 {{- if ne .role.designation "ec" }}
 .ayusin/tasks.d/automox-sucks

@@ -13,6 +13,7 @@
 .ayusin/tasks.d/infra-vagrant-box
 {{- else }}
 .ayusin/tasks.d/pass-git-push
+.password-store/.extensions/file.bash
 {{- end }}
 {{- $path_without_local_bin := without (splitList ":" (env "PATH")) (print (env "HOME") "/.local/bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}

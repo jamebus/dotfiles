@@ -166,3 +166,10 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
+{{- if eq .role.designation "personal" }}
+[".password-store/.extensions/file.bash"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/jamebus/pass-file/refs/heads/master/file.bash"
+  executable = true
+  refreshPeriod = "24h"
+{{- end }}

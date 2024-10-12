@@ -5,6 +5,11 @@
 
 # Warning: Don't set PATH here, it'll get clobbered in macOS by /etc/zprofile
 
+{{- if eq .role.designation "personal" }}
+
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+{{- end }}
+
 # shellcheck source=/dev/null
 test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \
   source "${ZDOTDIR:-$HOME}/.zshenv.local"
