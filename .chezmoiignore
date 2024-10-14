@@ -28,3 +28,6 @@ install
 .ayusin/tasks.d/automox-sucks
 .ayusin/tasks.d/infra-vagrant-box
 {{- end }}
+{{- if not (lookPath "wezterm") }}
+.config/wezterm
+{{- end }}
