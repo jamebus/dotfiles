@@ -125,11 +125,11 @@ config.keys = {
         action = act.AdjustPaneSize { 'Up', 5 }
     },
     {
-        mods = 'LEADER',
-        key = ',',
+        mods   = 'LEADER',
+        key    = ',',
         action = act.PromptInputLine {
             description = 'Enter new name for tab',
-            action = wezterm.action_callback(
+            action      = wezterm.action_callback(
                 function(window, _, name)
                     if name then
                         window:active_tab():set_title(name)
