@@ -7,7 +7,7 @@ config = {
     font                                 = wezterm.font 'FiraCode Nerd Font Mono',
     font_size                            = 12,
     cell_width                           = 0.9,
-    freetype_load_target                 = "Light", -- Not sure if this has an effect
+    freetype_load_target                 = 'Light', -- Not sure if this has an effect
     default_cursor_style                 = 'BlinkingUnderline',
     cursor_thickness                     = 3,
     cursor_blink_ease_in                 = 'Constant',
@@ -29,10 +29,10 @@ end
 
 config.colors = {}
 
-if get_appearance():find "Dark" then
-    config.color_scheme      = "Catppuccin Mocha"
+if get_appearance():find 'Dark' then
+    config.color_scheme      = 'Catppuccin Mocha'
 else
-    config.color_scheme      = "Catppuccin Latte"
+    config.color_scheme      = 'Catppuccin Latte'
     config.colors.background = 'white'
     config.colors.foreground = 'black'
     config.inactive_pane_hsb = {
@@ -41,7 +41,7 @@ else
     }
 end
 
-config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
+config.leader = { key = 'q', mods = 'ALT', timeout_milliseconds = 2000 }
 
 config.keys = {
     {
@@ -55,74 +55,74 @@ config.keys = {
         action = act.DisableDefaultAssignment
     },
     {
-        mods   = "LEADER",
-        key    = "c",
-        action = act.SpawnTab "CurrentPaneDomain"
+        mods   = 'LEADER',
+        key    = 'c',
+        action = act.SpawnTab 'CurrentPaneDomain'
     },
     {
-        mods   = "LEADER",
-        key    = "x",
+        mods   = 'LEADER',
+        key    = 'x',
         action = act.CloseCurrentPane { confirm = true }
     },
     {
-        mods   = "LEADER",
-        key    = "b",
+        mods   = 'LEADER',
+        key    = 'b',
         action = act.ActivateTabRelative(-1)
     },
     {
-        mods   = "LEADER",
-        key    = "n",
+        mods   = 'LEADER',
+        key    = 'n',
         action = act.ActivateTabRelative(1)
     },
     {
-        mods   = "LEADER",
-        key    = "|",
-        action = act.SplitHorizontal { domain = "CurrentPaneDomain" }
+        mods   = 'LEADER',
+        key    = '|',
+        action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }
     },
     {
-        mods   = "LEADER",
-        key    = "-",
-        action = act.SplitVertical { domain = "CurrentPaneDomain" }
+        mods   = 'LEADER',
+        key    = '-',
+        action = act.SplitVertical { domain = 'CurrentPaneDomain' }
     },
     {
-        mods   = "LEADER",
-        key    = "h",
-        action = act.ActivatePaneDirection "Left"
+        mods   = 'LEADER',
+        key    = 'h',
+        action = act.ActivatePaneDirection 'Left'
     },
     {
-        mods   = "LEADER",
-        key    = "j",
-        action = act.ActivatePaneDirection "Down"
+        mods   = 'LEADER',
+        key    = 'j',
+        action = act.ActivatePaneDirection 'Down'
     },
     {
-        mods   = "LEADER",
-        key    = "k",
-        action = act.ActivatePaneDirection "Up"
+        mods   = 'LEADER',
+        key    = 'k',
+        action = act.ActivatePaneDirection 'Up'
     },
     {
-        mods   = "LEADER",
-        key    = "l",
-        action = act.ActivatePaneDirection "Right"
+        mods   = 'LEADER',
+        key    = 'l',
+        action = act.ActivatePaneDirection 'Right'
     },
     {
-        mods   = "LEADER",
-        key    = "LeftArrow",
-        action = act.AdjustPaneSize { "Left", 5 }
+        mods   = 'LEADER',
+        key    = 'LeftArrow',
+        action = act.AdjustPaneSize { 'Left', 5 }
     },
     {
-        mods   = "LEADER",
-        key    = "RightArrow",
-        action = act.AdjustPaneSize { "Right", 5 }
+        mods   = 'LEADER',
+        key    = 'RightArrow',
+        action = act.AdjustPaneSize { 'Right', 5 }
     },
     {
-        mods   = "LEADER",
-        key    = "DownArrow",
-        action = act.AdjustPaneSize { "Down", 5 }
+        mods   = 'LEADER',
+        key    = 'DownArrow',
+        action = act.AdjustPaneSize { 'Down', 5 }
     },
     {
-        mods   = "LEADER",
-        key    = "UpArrow",
-        action = act.AdjustPaneSize { "Up", 5 }
+        mods   = 'LEADER',
+        key    = 'UpArrow',
+        action = act.AdjustPaneSize { 'Up', 5 }
     },
     {
         mods = 'LEADER',
@@ -143,7 +143,7 @@ config.keys = {
 for i = 0, 9 do
     table.insert(config.keys, {
         key    = tostring(i),
-        mods   = "LEADER",
+        mods   = 'LEADER',
         action = act.ActivateTab(i)
     })
 end
