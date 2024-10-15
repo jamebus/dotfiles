@@ -122,6 +122,20 @@ config.keys = {
         mods   = "LEADER",
         key    = "UpArrow",
         action = wezterm.action.AdjustPaneSize { "Up", 5 }
+    },
+    {
+        mods = 'LEADER',
+        key = ',',
+        action = wezterm.action.PromptInputLine {
+            description = 'Enter new name for tab',
+            action = wezterm.action_callback(
+                function(window, _, name)
+                    if name then
+                        window:active_tab():set_title(name)
+                    end
+                end
+            )
+        }
     }
 }
 
