@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 local config  = wezterm.config_builder()
+local act     = wezterm.action
 
 config = {
     color_scheme                         = 'Catppuccin Latte',
@@ -46,87 +47,87 @@ config.keys = {
     {
         key    = 'Enter',
         mods   = 'SUPER',
-        action = wezterm.action.ToggleFullScreen
+        action = act.ToggleFullScreen
     },
     {
         key    = 'Enter',
         mods   = 'ALT',
-        action = wezterm.action.DisableDefaultAssignment
+        action = act.DisableDefaultAssignment
     },
     {
         mods   = "LEADER",
         key    = "c",
-        action = wezterm.action.SpawnTab "CurrentPaneDomain",
+        action = act.SpawnTab "CurrentPaneDomain"
     },
     {
         mods   = "LEADER",
         key    = "x",
-        action = wezterm.action.CloseCurrentPane { confirm = true }
+        action = act.CloseCurrentPane { confirm = true }
     },
     {
         mods   = "LEADER",
         key    = "b",
-        action = wezterm.action.ActivateTabRelative(-1)
+        action = act.ActivateTabRelative(-1)
     },
     {
         mods   = "LEADER",
         key    = "n",
-        action = wezterm.action.ActivateTabRelative(1)
+        action = act.ActivateTabRelative(1)
     },
     {
         mods   = "LEADER",
         key    = "|",
-        action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }
+        action = act.SplitHorizontal { domain = "CurrentPaneDomain" }
     },
     {
         mods   = "LEADER",
         key    = "-",
-        action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
+        action = act.SplitVertical { domain = "CurrentPaneDomain" }
     },
     {
         mods   = "LEADER",
         key    = "h",
-        action = wezterm.action.ActivatePaneDirection "Left"
+        action = act.ActivatePaneDirection "Left"
     },
     {
         mods   = "LEADER",
         key    = "j",
-        action = wezterm.action.ActivatePaneDirection "Down"
+        action = act.ActivatePaneDirection "Down"
     },
     {
         mods   = "LEADER",
         key    = "k",
-        action = wezterm.action.ActivatePaneDirection "Up"
+        action = act.ActivatePaneDirection "Up"
     },
     {
         mods   = "LEADER",
         key    = "l",
-        action = wezterm.action.ActivatePaneDirection "Right"
+        action = act.ActivatePaneDirection "Right"
     },
     {
         mods   = "LEADER",
         key    = "LeftArrow",
-        action = wezterm.action.AdjustPaneSize { "Left", 5 }
+        action = act.AdjustPaneSize { "Left", 5 }
     },
     {
         mods   = "LEADER",
         key    = "RightArrow",
-        action = wezterm.action.AdjustPaneSize { "Right", 5 }
+        action = act.AdjustPaneSize { "Right", 5 }
     },
     {
         mods   = "LEADER",
         key    = "DownArrow",
-        action = wezterm.action.AdjustPaneSize { "Down", 5 }
+        action = act.AdjustPaneSize { "Down", 5 }
     },
     {
         mods   = "LEADER",
         key    = "UpArrow",
-        action = wezterm.action.AdjustPaneSize { "Up", 5 }
+        action = act.AdjustPaneSize { "Up", 5 }
     },
     {
         mods = 'LEADER',
         key = ',',
-        action = wezterm.action.PromptInputLine {
+        action = act.PromptInputLine {
             description = 'Enter new name for tab',
             action = wezterm.action_callback(
                 function(window, _, name)
@@ -143,7 +144,7 @@ for i = 0, 9 do
     table.insert(config.keys, {
         key    = tostring(i),
         mods   = "LEADER",
-        action = wezterm.action.ActivateTab(i),
+        action = act.ActivateTab(i)
     })
 end
 
@@ -151,12 +152,12 @@ config.mouse_bindings = {
     {
         event  = { Up = { streak = 1, button = 'Left' } },
         mods   = 'SUPER',
-        action = wezterm.action.OpenLinkAtMouseCursor
+        action = act.OpenLinkAtMouseCursor
     },
     {
         event  = { Up = { streak = 1, button = 'Left' } },
         mods   = 'NONE',
-        action = wezterm.action.CompleteSelection 'Clipboard'
+        action = act.CompleteSelection 'Clipboard'
     }
 }
 
