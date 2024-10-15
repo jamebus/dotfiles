@@ -126,6 +126,11 @@ config.keys = {
     },
     {
         mods   = 'LEADER',
+        key    = 'z',
+        action = wezterm.action.TogglePaneZoomState
+    },
+    {
+        mods   = 'LEADER',
         key    = ',',
         action = act.PromptInputLine {
             description = 'Enter new name for tab',
