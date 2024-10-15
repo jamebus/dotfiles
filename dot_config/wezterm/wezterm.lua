@@ -77,6 +77,11 @@ config.keys = {
     },
     {
         mods   = 'LEADER',
+        key    = 'w',
+        action = act.ShowTabNavigator
+    },
+    {
+        mods   = 'LEADER',
         key    = '|',
         action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }
     },
