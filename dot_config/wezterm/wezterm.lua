@@ -3,21 +3,22 @@ local config  = wezterm.config_builder()
 local act     = wezterm.action
 
 config = {
-    color_scheme                         = 'Catppuccin Latte',
-    font                                 = wezterm.font 'FiraCode Nerd Font Mono',
-    font_size                            = 12,
-    cell_width                           = 0.9,
-    freetype_load_target                 = 'Light', -- Not sure if this has an effect
-    default_cursor_style                 = 'BlinkingUnderline',
-    cursor_thickness                     = 3,
-    cursor_blink_ease_in                 = 'Constant',
-    cursor_blink_ease_out                = 'Constant',
-    native_macos_fullscreen_mode         = true,
-    use_resize_increments                = true,
-    hide_tab_bar_if_only_one_tab         = true,
-    tab_bar_at_bottom                    = true,
-    use_fancy_tab_bar                    = false,
-    tab_and_split_indices_are_zero_based = true
+    color_scheme                               = 'Catppuccin Latte',
+    font                                       = wezterm.font 'FiraCode Nerd Font Mono',
+    font_size                                  = 12,
+    cell_width                                 = 0.9,
+    freetype_load_target                       = 'Light', -- Not sure if this has an effect
+    default_cursor_style                       = 'BlinkingUnderline',
+    cursor_thickness                           = 3,
+    cursor_blink_ease_in                       = 'Constant',
+    cursor_blink_ease_out                      = 'Constant',
+    native_macos_fullscreen_mode               = true,
+    use_resize_increments                      = true,
+    hide_tab_bar_if_only_one_tab               = true,
+    tab_bar_at_bottom                          = true,
+    use_fancy_tab_bar                          = false,
+    tab_and_split_indices_are_zero_based       = true,
+    switch_to_last_active_tab_when_closing_tab = true
 }
 
 local function get_appearance()
