@@ -13,7 +13,6 @@ config = {
     cursor_blink_ease_in                       = 'Constant',
     cursor_blink_ease_out                      = 'Constant',
     native_macos_fullscreen_mode               = true,
-    use_resize_increments                      = true,
     hide_tab_bar_if_only_one_tab               = true,
     tab_bar_at_bottom                          = true,
     use_fancy_tab_bar                          = false,
