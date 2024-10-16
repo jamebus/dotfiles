@@ -42,7 +42,7 @@ else
     }
 end
 
-config.leader = { key = 'q', mods = 'ALT', timeout_milliseconds = 2000 }
+config.leader = { key = 'a', mods = 'ALT', timeout_milliseconds = 2000 }
 
 config.keys = {
     {
