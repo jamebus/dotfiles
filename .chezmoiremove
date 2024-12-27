@@ -23,6 +23,12 @@
 .config/ghostty/themes/catppuccin-latte
 .config/ghostty/themes/catppuccin-mocha
 {{- end }}
+{{- if and (ne .chezmoi.os "darwin") (lookPath "ghostty") }}
+.terminfo/67/ghostty
+.terminfo/78/xterm-ghostty
+.terminfo/x/xterm-ghostty
+.terminfo/g/ghostty
+{{- end }}
 {{- $path_without_local_bin := without (splitList ":" (env "PATH")) (print (env "HOME") "/.local/bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
 .local/bin/atuin

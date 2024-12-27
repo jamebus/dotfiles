@@ -173,3 +173,11 @@
   executable = true
   refreshPeriod = "24h"
 {{- end }}
+{{- if not (lookPath "ghostty") }}
+[".terminfo"]
+  type = "archive"
+  url = "https://hicag.link/ghostty-terminfo"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+{{- end }}
