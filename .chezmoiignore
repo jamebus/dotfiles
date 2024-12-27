@@ -31,3 +31,6 @@ install
 {{- if not (lookPath "wezterm") }}
 .config/wezterm
 {{- end }}
+{{- if not (lookPath "ghostty") }}
+.config/ghostty
+{{- end }}

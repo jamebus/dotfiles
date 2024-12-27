@@ -18,6 +18,11 @@
 {{- if not (lookPath "wezterm") }}
 .config/wezterm/wezterm.lua
 {{- end }}
+{{- if not (lookPath "ghostty") }}
+.config/ghostty/config
+.config/ghostty/themes/catppuccin-latte
+.config/ghostty/themes/catppuccin-mocha
+{{- end }}
 {{- $path_without_local_bin := without (splitList ":" (env "PATH")) (print (env "HOME") "/.local/bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
 .local/bin/atuin
