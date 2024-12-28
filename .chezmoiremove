@@ -29,7 +29,7 @@
 .terminfo/x/xterm-ghostty
 .terminfo/g/ghostty
 {{- end }}
-{{- $path_without_local_bin := without (splitList ":" (env "PATH")) (print (env "HOME") "/.local/bin") }}
+{{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
 .local/bin/atuin
 {{- end }}
