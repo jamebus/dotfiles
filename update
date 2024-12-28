@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -eu
+
+if ! command -v chezmoi >/dev/null; then
+	echo 'FATAL: chezmoi not found' 1>&2
+	exit 1
+fi
+
+if [ "${HOME}/.local/bin/chezmoi" = "$(command -v chezmoi)" ]; then
+	chezmoi upgrade
+fi
+
+set -- update --source="${0%/*}"
+
+echo "Running 'chezmoi $*'"
+exec chezmoi "$@"
