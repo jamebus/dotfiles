@@ -1,4 +1,4 @@
-{{ if ne .chezmoi.os "darwin" -}}
+{{ if not (stat "/Applications/iTerm.app/Contents/PkgInfo") -}}
 .iterm2_shell_integration.zsh
 {{ end -}}
 .aws/awsctx
