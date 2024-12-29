@@ -1,4 +1,5 @@
 install
+update
 .oh-my-zsh/cache
 {{- if not (lookPath "pag") }}
 .pagpapanatili
