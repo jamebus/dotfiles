@@ -181,3 +181,11 @@
   stripComponents = 1
   refreshPeriod = "24h"
 {{- end }}
+{{- if lookPath "kubectl" }}
+[".oh-my-zsh/custom/plugins/kubectl-config-switcher"]
+  type = "archive"
+  url = "https://github.com/chmouel/kubectl-config-switcher/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+{{- end }}

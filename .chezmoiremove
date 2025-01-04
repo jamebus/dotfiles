@@ -5,6 +5,8 @@
 .aws/current_profile
 .p10k.zsh
 .p10k.zsh.bak
+.kube/kubectx
+.kube/kubens
 {{- if eq .role.designation "personal" }}
   {{- if not .role.actual }}
 .ayusin/tasks.d/pass-git-push
@@ -28,6 +30,10 @@
 .terminfo/78/xterm-ghostty
 .terminfo/x/xterm-ghostty
 .terminfo/g/ghostty
+{{- end }}
+{{- if not (lookPath "kubectl") }}
+.oh-my-zsh/custom/plugins/kubectl-config-switcher
+.kube/.kcs.history
 {{- end }}
 {{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
