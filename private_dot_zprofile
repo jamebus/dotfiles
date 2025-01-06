@@ -14,6 +14,8 @@ command -v gem >/dev/null 2>&1 && \
 prepend_to_path '/usr/local/opt/libpq/bin'
 prepend_to_path '/usr/local/opt/mysql-client/bin'
 prepend_to_path '/usr/local/opt/kubernetes-cli/bin'
+test -x '/usr/local/opt/mysql-client@8.4/bin/mysql' && \
+  alias mysql8='/usr/local/opt/mysql-client@8.4/bin/mysql'
 
 prepend_to_path "${HOME}/bin"
 prepend_to_path "${HOME}/.local/bin"
