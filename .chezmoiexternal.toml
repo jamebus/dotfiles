@@ -189,3 +189,10 @@
   stripComponents = 1
   refreshPeriod = "24h"
 {{- end }}
+{{- if lookPath "k9s" }}
+[".config/k9s/skins/catppuccin-mocha.yaml"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
+  executable = true
+  refreshPeriod = "24h"
+{{- end }}

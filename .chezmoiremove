@@ -35,6 +35,13 @@
 .oh-my-zsh/custom/plugins/kubectl-config-switcher
 .kube/.kcs.history
 {{- end }}
+{{- if not (lookPath "e1s") }}
+.config/e1s/config.yml
+{{- end }}
+{{- if not (lookPath "k9s") }}
+.config/k9s/config.yml
+.config/k9s/skins/catppuccin-mocha.yaml
+{{- end }}
 {{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
 .local/bin/atuin
