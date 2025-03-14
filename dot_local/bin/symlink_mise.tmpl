@@ -1,0 +1,2 @@
+{{ $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") -}}
+{{ findExecutable "mise" $path_without_local_bin }}
