@@ -26,9 +26,6 @@ export TRIVY_JAVA_DB_REPOSITORY='public.ecr.aws/aquasecurity/trivy-java-db,aquas
 export K9S_CONFIG_DIR="${HOME}/.config/k9s"
 {{- end }}
 
-test -S "${HOME}/.docker/run/docker.sock" && \
-  export DOCKER_HOST="unix://${HOME}/.docker/run/docker.sock"
-
 # shellcheck source=/dev/null
 test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \
   source "${ZDOTDIR:-$HOME}/.zshenv.local"
