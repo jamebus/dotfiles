@@ -7,6 +7,7 @@
 .p10k.zsh.bak
 .kube/kubectx
 .kube/kubens
+.local/share/direnv
 {{- if eq .role.designation "personal" }}
   {{- if not .role.actual }}
 .ayusin/tasks.d/pass-git-push

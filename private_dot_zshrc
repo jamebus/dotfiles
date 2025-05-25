@@ -20,7 +20,6 @@ plugins=(colored-man-pages zsh-syntax-highlighting)
 
 command -v ansible   >/dev/null 2>&1 && plugins+=(ansible)
 command -v aws       >/dev/null 2>&1 && plugins+=(aws)
-command -v direnv    >/dev/null 2>&1 && plugins+=(direnv)
 command -v docker    >/dev/null 2>&1 && plugins+=(docker)
 command -v eza       >/dev/null 2>&1 && plugins+=(eza)
 command -v fzf       >/dev/null 2>&1 && plugins+=(fzf)
