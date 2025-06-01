@@ -9,6 +9,11 @@ update
 {{- end }}
 {{- if not (lookPath "terraform") }}
 .terraformrc
+{{- end }}
+{{- if not (lookPath "tofu") }}
+.tofurc
+{{- end }}
+{{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
 .terraform.d
 {{- end }}
 {{- if or (not (lookPath "git")) (eq (env "REMOTE_CONTAINERS") "true") }}
