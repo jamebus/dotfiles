@@ -45,6 +45,15 @@
 .config/k9s/config.yml
 .config/k9s/skins/catppuccin-mocha.yaml
 {{- end }}
+{{- if not (lookPath "terraform") }}
+.terraformrc
+{{- end }}
+{{- if not (lookPath "tofu") }}
+.tofurc
+{{- end }}
+{{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
+.terraform.d
+{{- end }}
 {{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
 .local/bin/atuin
