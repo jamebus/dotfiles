@@ -8,6 +8,8 @@
 .kube/kubectx
 .kube/kubens
 .local/share/direnv
+.terraform.d/checkpoint_cache
+.terraform.d/checkpoint_signature
 {{- if eq .role.designation "personal" }}
   {{- if not .role.actual }}
 .ayusin/tasks.d/pass-git-push
