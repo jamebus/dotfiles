@@ -25,6 +25,10 @@ export TRIVY_JAVA_DB_REPOSITORY='public.ecr.aws/aquasecurity/trivy-java-db,aquas
 
 export K9S_CONFIG_DIR="${HOME}/.config/k9s"
 {{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+
+export _ZO_DATA_DIR="${HOME}/.local/share/zoxide"
+{{- end }}
 
 # shellcheck source=/dev/null
 test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \

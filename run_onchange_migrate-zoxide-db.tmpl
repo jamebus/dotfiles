@@ -1,0 +1,14 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+
+old_dir="${HOME}/Library/Application Support/zoxide"
+new_dir="${HOME}/.local/share/zoxide"
+
+test ! -d "$old_dir"         && exit
+test   -e "${new_dir}/db.zo" && exit
+test ! -d "$new_dir"         && mkdir -p "$new_dir"
+
+mv    "${old_dir}/db.zo" "$new_dir"
+ln -s "${new_dir}/db.zo" "$old_dir" # Compatibility for existing sessions
+
+{{- end }}
