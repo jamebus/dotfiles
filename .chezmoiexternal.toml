@@ -58,10 +58,14 @@
   {{- if eq .chezmoi.os "linux" }}
     {{- if eq .chezmoi.osRelease.id "alpine" }}
       {{- $runtime = "musl" }}
-    {{- else if eq $arch "arm" }}
-      {{- $runtime = "gnueabihf" }}
+        {{- if eq $arch "arm" }}
+          {{- $runtime = "musleabihf" }}
+        {{- end }}
     {{- else }}
       {{- $runtime = "gnu" }}
+      {{- if eq $arch "arm" }}
+        {{- $runtime = "gnueabihf" }}
+      {{- end }}
     {{- end }}
   {{- end }}
   {{- $archive_url := gitHubLatestReleaseAssetURL "eza-community/eza" (printf "eza_%s-*-%s-%s.tar.gz" $arch .chezmoi.os $runtime) }}
@@ -129,14 +133,18 @@
     {{- $arch = "armv7" }}
   {{- end }}
   {{- if eq .chezmoi.os "linux" }}
-    {{- if eq .chezmoi.arch "amd64" }}
+    {{- if eq .chezmoi.osRelease.id "alpine" }}
       {{- $runtime = "-musl" }}
-    {{- else if eq .chezmoi.osRelease.id "alpine" }}
-      {{- $runtime = "-musl" }}
-    {{- else if eq .chezmoi.arch "arm" }}
-      {{- $runtime = "-musleabihf" }}
+        {{- if eq $arch "armv7" }}
+          {{- $runtime = "-musleabihf" }}
+        {{- end }}
     {{- else }}
       {{- $runtime = "-gnu" }}
+      {{- if eq $arch "armv7" }}
+        {{- $runtime = "-gnueabihf" }}
+      {{- else if eq $arch "x86_64" }}
+        {{- $runtime = "-musl" }}
+      {{- end }}
     {{- end }}
   {{- end }}
   {{- $archive_url := gitHubLatestReleaseAssetURL "BurntSushi/ripgrep" (printf "ripgrep-*-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) }}
