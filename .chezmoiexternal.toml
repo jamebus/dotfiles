@@ -73,6 +73,37 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
+{{- if or (findExecutable "fd" (list ".local/bin")) (not (lookPath "fd")) }}
+  {{- $arch := .chezmoi.arch }}
+  {{- $runtime := "" }}
+  {{- if eq $arch "arm64" }}
+    {{- $arch = "aarch64" }}
+  {{- else if eq $arch "amd64" }}
+    {{- $arch = "x86_64" }}
+  {{- end }}
+  {{- if eq .chezmoi.os "linux" }}
+    {{- if eq .chezmoi.osRelease.id "alpine" }}
+      {{- $runtime = "-musl" }}
+        {{- if eq $arch "arm" }}
+          {{- $runtime = "-musleabihf" }}
+        {{- end }}
+    {{- else }}
+      {{- $runtime = "-gnu" }}
+      {{- if eq $arch "arm" }}
+        {{- $runtime = "-gnueabihf" }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- $archive_url := gitHubLatestReleaseAssetURL "sharkdp/fd" (printf "fd-*-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) }}
+  {{- if ne $archive_url "" }}
+[".local/bin/fd"]
+  type = "archive-file"
+  url = {{ quote $archive_url }}
+  stripComponents = 1
+  path = "fd"
+  refreshPeriod = "24h"
+  {{- end }}
+{{- end }}
 {{- if or (findExecutable "fzf" (list ".local/bin")) (not (lookPath "fzf")) }}
   {{- $arch := .chezmoi.arch }}
   {{- if eq $arch "arm" }}

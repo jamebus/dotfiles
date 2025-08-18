@@ -64,6 +64,9 @@
 {{- if findExecutable "eza" $path_without_local_bin }}
 .local/bin/eza
 {{- end }}
+{{- if findExecutable "fd" $path_without_local_bin }}
+.local/bin/fd
+{{- end }}
 {{- if findExecutable "fzf" $path_without_local_bin }}
 .local/bin/fzf
 {{- end }}
