@@ -46,3 +46,6 @@ update
 {{- if not (lookPath "k9s") }}
 .config/k9s
 {{- end }}
+{{- if not (lookPath "nvim") }}
+.config/nvim
+{{- end }}
