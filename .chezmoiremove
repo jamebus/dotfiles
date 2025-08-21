@@ -53,6 +53,12 @@
 {{- if not (lookPath "tofu") }}
 .tofurc
 {{- end }}
+{{- if not (lookPath "nvim") }}
+.config/nvim
+.local/share/nvim
+.local/state/nvim
+.cache/nvim
+{{- end }}
 {{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
 .terraform.d
 {{- end }}
