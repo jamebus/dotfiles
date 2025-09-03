@@ -48,4 +48,5 @@ update
 {{- end }}
 {{- if not (lookPath "nvim") }}
 .config/nvim
+.ayusin/tasks.d/update-lazyvim
 {{- end }}
