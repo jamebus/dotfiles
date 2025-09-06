@@ -10,8 +10,8 @@ task_description='Update LazyVim'
 
 task_start
 
-command -v nvim >/dev/null 2>&1               || task_skip
-test -f "${HOME}/.config/nvim/lazy-lock.json" || task_skip
-$DRYRUN nvim --headless '+Lazy! sync' +qa     || task_fail
+command -v nvim >/dev/null 2>&1                              || task_skip
+test -f "${HOME}/.config/nvim/lazy-lock.json"                || task_skip
+$DRYRUN nvim --headless '+Lazy! sync' '+Lazy! clean' +qa     || task_fail
 
 task_end
