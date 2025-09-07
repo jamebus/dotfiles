@@ -13,3 +13,5 @@ vim.opt.listchars = {
   precedes = "◀",
   nbsp = "‿",
 }
+
+vim.opt.fillchars:append({ eob = "~" })

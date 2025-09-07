@@ -16,6 +16,7 @@ return {
           text = "#000000",
         },
       },
+      show_end_of_buffer = true,
     },
   },
 
