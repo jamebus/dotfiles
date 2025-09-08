@@ -15,3 +15,5 @@ vim.opt.listchars = {
 }
 
 vim.opt.fillchars:append({ eob = "~" })
+
+vim.g.autoformat = false
