@@ -5,6 +5,7 @@
 .aws/current_profile
 .ayusin/tasks.d/reek
 .ayusin/tasks.d/rubocop
+.ayusin/tasks.d/update-lazyvim
 .kube/kubectx
 .kube/kubens
 .local/share/direnv
@@ -58,7 +59,6 @@
 .local/share/nvim
 .local/state/nvim
 .cache/nvim
-.ayusin/tasks.d/update-lazyvim
 {{- end }}
 {{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
 .terraform.d
