@@ -8,6 +8,8 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = vim.api.nvim_create_augroup("autoformat", { clear = true }),
+
   pattern = { "lua", "terraform", "terraform-vars", "tf" },
   callback = function()
     vim.b.autoformat = true
