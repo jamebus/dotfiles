@@ -17,3 +17,6 @@ vim.opt.listchars = {
 vim.opt.fillchars:append({ eob = "~" })
 
 vim.g.autoformat = false
+
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = "+1"
