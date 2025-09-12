@@ -6,6 +6,7 @@
 .ayusin/tasks.d/reek
 .ayusin/tasks.d/rubocop
 .ayusin/tasks.d/update-lazyvim
+.config/nvim/lua/plugins/smartcolumn.lua
 .kube/kubectx
 .kube/kubens
 .local/share/direnv
