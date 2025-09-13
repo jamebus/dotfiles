@@ -3,11 +3,13 @@
 {{ end -}}
 .aws/awsctx
 .aws/current_profile
-.p10k.zsh
-.p10k.zsh.bak
+.ayusin/tasks.d/reek
+.ayusin/tasks.d/rubocop
 .kube/kubectx
 .kube/kubens
 .local/share/direnv
+.p10k.zsh
+.p10k.zsh.bak
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
 {{- if eq .role.designation "personal" }}
