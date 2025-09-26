@@ -3,8 +3,16 @@ return {
     "folke/snacks.nvim",
     opts = {
       picker = {
-        hidden = true, -- show hidden files
-        ignored = true, -- show files ignored by .gitignore
+        sources = {
+          explorer = {
+            hidden = true, -- show hidden files
+            ignored = true, -- show files ignored by .gitignore
+          },
+          files = {
+            hidden = true, -- show hidden files
+            ignored = true, -- show files ignored by .gitignore
+          },
+        },
       },
     },
   },
