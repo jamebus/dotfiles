@@ -3,6 +3,7 @@
 {{ end -}}
 .aws/awsctx
 .aws/current_profile
+.awsctx
 .ayusin/tasks.d/puppet-lint
 .ayusin/tasks.d/reek
 .ayusin/tasks.d/rubocop
