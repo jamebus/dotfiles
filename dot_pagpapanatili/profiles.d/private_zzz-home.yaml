@@ -12,6 +12,7 @@ home:
       - "{{ $relativehome }}/.cache"
       - "{{ $relativehome }}/.cargo/git"
       - "{{ $relativehome }}/.cargo/registry"
+      - "{{ $relativehome }}/.colima/_lima"
       - "{{ $relativehome }}/.gem/ruby/*/cache"
       - "{{ $relativehome }}/.minikube/cache"
       - "{{ $relativehome }}/.npm/_cacache"
