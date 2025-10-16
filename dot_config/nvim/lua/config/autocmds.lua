@@ -8,7 +8,7 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 local augroup_autoformat = vim.api.nvim_create_augroup("autoformat", { clear = true })
-local augroup_commentstring = vim.api.nvim_create_augroup("autoformat", { clear = true })
+local augroup_commentstring = vim.api.nvim_create_augroup("commentstring", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "lua", "terraform", "terraform-vars", "tf" },
