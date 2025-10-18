@@ -3,7 +3,7 @@ return {
   opts = {
     options = {
       component_separators = "",
-      section_separators = "",
+      section_separators = { left = "", right = "" },
     },
     sections = {
       lualine_z = { "lsp_status" },
