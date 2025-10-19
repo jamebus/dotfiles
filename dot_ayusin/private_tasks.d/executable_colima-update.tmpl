@@ -1,0 +1,25 @@
+{{ if lookPath "colima" -}}
+#!/bin/sh
+
+# shellcheck disable=SC1090
+. "$(ayusin --common)"
+# shellcheck disable=SC2034
+task_description='Colima container runtime update'
+
+task_start
+
+command -v colima >/dev/null 2>&1 || task_skip
+
+# update not supported for the containerd runtime
+profiles=$(colima ls -j | \
+           jq -r '(select(.runtime != "containerd" and
+                          .runtime != "containerd+k3s")) | .name')
+
+rc=0
+for p in $profiles; do
+	$DRYRUN colima update "$p" || rc=$((rc+1))
+done
+test $rc -gt 0 && task_fail
+
+task_end
+{{ end -}}
