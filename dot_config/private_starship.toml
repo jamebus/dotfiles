@@ -286,7 +286,7 @@ command = '''git log -1 --pretty=format:%B | grep -E '[^[:alnum:]](wip|WIP)[^[:a
 style = "bold red"
 
 [custom.cloud_instance]
-description = "cloud instance id. probably just ec2"
+description = "cloud instance id. for ec2, but works on others too"
 when = "test -L /var/lib/cloud/instance"
 command = '''realpath /var/lib/cloud/instance | sed 's,^.*/,,''''
 symbol = " "
