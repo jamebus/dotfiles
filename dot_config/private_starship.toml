@@ -25,6 +25,7 @@ $git_status\
 $hg_branch\
 $pijul_channel\
 $docker_context\
+${custom.docker_buildx_builder}\
 $package\
 $c\
 $cmake\
@@ -292,3 +293,11 @@ command = '''realpath /var/lib/cloud/instance | sed 's,^.*/,,''''
 symbol = " "
 style = "bold dimmed green"
 format = "[$symbol($output)]($style) in "
+
+[custom.docker_buildx_builder]
+description = "Docker buildx builder"
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+command = '''jq -r '.Name' ~/.docker/buildx/current'''
+symbol = " "
+style = "blue bold"
+format = "via [$symbol($output)]($style) "
