@@ -1,0 +1,14 @@
+{{ if and (eq .chezmoi.os "darwin") (lookPath "lazygit") -}}
+#!/bin/sh
+
+old_dir="${HOME}/Library/Application Support/lazygit"
+new_dir="${HOME}/.local/state/lazygit"
+
+test   -e "${new_dir}/state.yml" && exit
+test ! -d "$old_dir"             && mkdir -p "$old_dir"
+test ! -d "$new_dir"             && mkdir -p "$new_dir"
+test ! -f "${old_dir}/state.yml" && touch "${old_dir}/state.yml"
+
+mv    "${old_dir}/state.yml" "$new_dir"
+ln -s "${new_dir}/state.yml" "$old_dir"
+{{ end -}}
