@@ -10,5 +10,4 @@ test ! -d "$new_dir"         && mkdir -p "$new_dir"
 
 mv    "${old_dir}/db.zo" "$new_dir"
 ln -s "${new_dir}/db.zo" "$old_dir" # Compatibility for existing sessions
-
-{{- end }}
+{{ end -}}
