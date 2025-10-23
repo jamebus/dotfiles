@@ -297,7 +297,7 @@ format = "[$symbol($output)]($style) in "
 [custom.docker_buildx_builder]
 description = "Docker buildx builder"
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
-command = '''jq -r '.Name' ~/.docker/buildx/current'''
+command = '''jq -r '(.Name | select(. != null and . != "")) // .Key' ~/.docker/buildx/current'''
 symbol = " "
 style = "blue bold"
 format = "via [$symbol($output)]($style) "
