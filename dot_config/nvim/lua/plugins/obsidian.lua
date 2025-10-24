@@ -19,7 +19,7 @@ return {
         path = "~/vaults/personal",
       },
       {
-        name = "personal",
+        name = "work",
         path = "~/vaults/work",
       },
     },
