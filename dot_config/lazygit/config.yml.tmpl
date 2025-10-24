@@ -1,4 +1,41 @@
 {{ if lookPath "lazygit" -}}
 git:
+  skipHookPrefix: --wip--
   autoForwardBranches: none
+gui:
+  nerdFontsVersion: 3
+  spinner:
+    frames:
+      - ⢄
+      - ⢂
+      - ⢁
+      - ⡁
+      - ⡈
+      - ⡐
+      - ⡠
+  rate: 100
+  theme:
+    activeBorderColor:
+      - '#df8e1d'
+      - bold
+    inactiveBorderColor:
+      - '#6c6f85'
+    optionsTextColor:
+      - '#1e66f5'
+    selectedLineBgColor:
+      - '#ccd0da'
+    cherryPickedCommitBgColor:
+      - '#bcc0cc'
+    cherryPickedCommitFgColor:
+      - '#df8e1d'
+    unstagedChangesColor:
+      - '#d20f39'
+    defaultFgColor:
+      - '#000000'
+    searchingActiveBorderColor:
+      - '#df8e1d'
+  authorColors:
+    '*': '#7287fd'
+update:
+  method: never
 {{ end -}}
