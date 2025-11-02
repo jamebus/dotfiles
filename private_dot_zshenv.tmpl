@@ -29,6 +29,10 @@ export K9S_CONFIG_DIR="${HOME}/.config/k9s"
 
 export _ZO_DATA_DIR="${HOME}/.local/share/zoxide"
 {{- end }}
+{{- if lookPath "glow" }}
+
+export GLOW_CONFIG_HOME="${HOME}/.config/glow"
+{{- end }}
 
 # shellcheck source=/dev/null
 test -r "${ZDOTDIR:-$HOME}/.zshenv.local" && \
