@@ -16,6 +16,11 @@
 .local/share/direnv
 .p10k.zsh
 .p10k.zsh.bak
+.cache/p10k-{{ .chezmoi.username }}
+.cache/p10k-dump-{{ .chezmoi.username }}.zsh
+.cache/p10k-dump-{{ .chezmoi.username }}.zsh.zwc
+.cache/p10k-instant-prompt-{{ .chezmoi.username }}.zsh
+.cache/p10k-instant-prompt-{{ .chezmoi.username }}.zsh.zwc
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
 {{- if eq .role.designation "personal" }}
