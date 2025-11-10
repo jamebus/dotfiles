@@ -1,0 +1,3 @@
+{{ if and (eq .chezmoi.os "darwin") (lookPath "k9s") -}}
+../../../.config/k9s/plugins.yaml
+{{ end -}}
