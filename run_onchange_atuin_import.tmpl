@@ -1,6 +1,8 @@
 {{ if (lookPath "atuin") -}}
 #!/bin/sh
 
+set -eu
+
 test ! -f "${HOME}/.local/share/atuin/history.db" && \
   atuin import zsh || true
 {{ end -}}

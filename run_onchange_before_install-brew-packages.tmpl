@@ -1,6 +1,8 @@
 {{ if and (eq .chezmoi.os "darwin") (lookPath "brew") -}}
 #!/bin/sh
 
+set -eu
+
 cat <<_EOF_ | brew bundle --file=-
 brew "atuin"
 brew "eza"

@@ -1,6 +1,8 @@
 {{ if and (eq .chezmoi.os "darwin") (lookPath "lazygit") -}}
 #!/bin/sh
 
+set -eu
+
 old_dir="${HOME}/Library/Application Support/lazygit"
 new_dir="${HOME}/.local/state/lazygit"
 

@@ -1,6 +1,8 @@
 {{ if (lookPath "nvim") -}}
 #!/bin/sh
 
+set -eu
+
 test -f "${HOME}/.config/nvim/lazy-lock.json" || exit 0
 
 nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' \
