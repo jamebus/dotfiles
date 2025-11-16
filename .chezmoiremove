@@ -21,6 +21,7 @@
 .cache/p10k-dump-{{ .chezmoi.username }}.zsh.zwc
 .cache/p10k-instant-prompt-{{ .chezmoi.username }}.zsh
 .cache/p10k-instant-prompt-{{ .chezmoi.username }}.zsh.zwc
+.cache/gitstatus
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
 {{- if eq .role.designation "personal" }}
