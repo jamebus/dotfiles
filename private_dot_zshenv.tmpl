@@ -21,6 +21,8 @@ export GIT_COMMITTER_EMAIL={{ squote .contact.email }}
 export TRIVY_DB_REPOSITORY='public.ecr.aws/aquasecurity/trivy-db,aquasec/trivy-db,ghcr.io/aquasecurity/trivy-db'
 export TRIVY_JAVA_DB_REPOSITORY='public.ecr.aws/aquasecurity/trivy-java-db,aquasec/trivy-java-db,ghcr.io/aquasecurity/trivy-java-db'
 {{- end }}
+
+export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep.conf"
 {{- if eq .chezmoi.os "darwin" }}
 
 export _ZO_DATA_DIR="${HOME}/.local/share/zoxide"
