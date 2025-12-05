@@ -23,6 +23,13 @@ export TRIVY_JAVA_DB_REPOSITORY='public.ecr.aws/aquasecurity/trivy-java-db,aquas
 {{- end }}
 
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep.conf"
+
+export FZF_DEFAULT_OPTS='
+  --color=bg+:#CCD0DA,bg:#EFF1F5,spinner:#DC8A78,hl:#D20F39
+  --color=fg:#4C4F69,header:#D20F39,info:#8839EF,pointer:#DC8A78
+  --color=marker:#7287FD,fg+:#4C4F69,prompt:#8839EF,hl+:#D20F39
+  --color=selected-bg:#BCC0CC
+  --color=border:#9CA0B0,label:#4C4F69'
 {{- if eq .chezmoi.os "darwin" }}
 
 export _ZO_DATA_DIR="${HOME}/.local/share/zoxide"
