@@ -5,5 +5,10 @@ set -eu
 
 test -f "${HOME}/.config/nvim/lazy-lock.json" || exit 0
 
+if [ -n "${__MISE_ORIG_PATH:-}" ]; then
+	PATH="$__MISE_ORIG_PATH"
+	export PATH
+fi
+
 nvim --headless '+Lazy! sync' '+Lazy! clean' +qa
 {{ end -}}
