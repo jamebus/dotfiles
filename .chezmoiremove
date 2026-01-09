@@ -86,7 +86,6 @@
 {{- end }}
 {{- if not (eq .chezmoi.os "darwin") }}
 Library/Application Support/lazygit
-Library/Application Support/glow
 {{- end }}
 {{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}

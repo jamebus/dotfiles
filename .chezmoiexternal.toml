@@ -236,3 +236,7 @@
   url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
   refreshPeriod = "24h"
 {{- end }}
+[".config/glow/themes/catppuccin-latte.json"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/glamour/main/themes/catppuccin-latte.json"
+  refreshPeriod = "24h"

@@ -29,10 +29,8 @@ export FZF_DEFAULT_OPTS='
 {{- if eq .chezmoi.os "darwin" }}
 
 export _ZO_DATA_DIR="${HOME}/.local/share/zoxide"
-  {{- if lookPath "glow" }}
 
 export GLOW_CONFIG_HOME="${HOME}/.config/glow"
-  {{- end }}
 {{- end }}
 
 # shellcheck source=/dev/null
