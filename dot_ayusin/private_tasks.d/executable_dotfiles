@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# This is set in common, but shellcheck doesn't detect it
-set -e
-
 # shellcheck disable=SC1090
 . "$(ayusin --common)"
 # shellcheck disable=SC2034
