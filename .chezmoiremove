@@ -56,12 +56,6 @@
 .config/k9s/config.yml
 .config/k9s/skins/catppuccin-mocha.yaml
 {{- end }}
-{{- if not (lookPath "terraform") }}
-.terraformrc
-{{- end }}
-{{- if not (lookPath "tofu") }}
-.tofurc
-{{- end }}
 {{- if not (lookPath "nvim") }}
 .config/nvim/README.md
 .config/nvim/LICENSE
@@ -89,9 +83,6 @@
 .local/share/nvim
 .local/state/nvim
 .cache/nvim
-{{- end }}
-{{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
-.terraform.d
 {{- end }}
 {{- if not (eq .chezmoi.os "darwin") }}
 Library/Application Support/lazygit
