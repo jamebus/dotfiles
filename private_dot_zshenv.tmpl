@@ -9,13 +9,11 @@
 
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 {{- end }}
-{{- if lookPath "git" }}
 
 export GIT_AUTHOR_NAME={{ squote .contact.name }}
 export GIT_AUTHOR_EMAIL={{ squote .contact.email }}
 export GIT_COMMITTER_NAME={{ squote .contact.name }}
 export GIT_COMMITTER_EMAIL={{ squote .contact.email }}
-{{- end }}
 {{- if lookPath "trivy" }}
 
 export TRIVY_DB_REPOSITORY='public.ecr.aws/aquasecurity/trivy-db,aquasec/trivy-db,ghcr.io/aquasecurity/trivy-db'
