@@ -1,4 +1,3 @@
-{{ if lookPath "restic" -}}
 #!/bin/sh
 
 # shellcheck disable=SC1090
@@ -12,4 +11,3 @@ command -v restic >/dev/null 2>&1 || task_skip
 $DRYRUN restic cache --cleanup    || task_fail
 
 task_end
-{{ end -}}
