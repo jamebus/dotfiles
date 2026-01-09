@@ -20,6 +20,10 @@
   type = "file"
   url = "https://raw.githubusercontent.com/atuinsh/atuin/main/atuin.plugin.zsh"
   refreshPeriod = "24h"
+[".config/atuin/themes/catppuccin-latte-blue.toml"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/atuin/main/themes/latte/catppuccin-latte-blue.toml"
+  refreshPeriod = "24h"
 {{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
