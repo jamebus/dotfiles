@@ -1,6 +1,4 @@
-{{ if lookPath "jqp" -}}
 theme:
   name: catppuccin-latte
   styleOverrides:
     primary: "#df8e1d"
-{{ end -}}
