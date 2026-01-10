@@ -24,9 +24,6 @@
 {{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
 {{- end }}
-{{- if not (lookPath "wezterm") }}
-.config/wezterm/wezterm.lua
-{{- end }}
 {{- if not (lookPath "ghostty") }}
 .config/ghostty/config
 .config/ghostty/themes/catppuccin-latte
