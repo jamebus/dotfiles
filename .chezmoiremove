@@ -22,13 +22,9 @@
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
 {{- if eq .role.designation "personal" }}
-  {{- if not .role.actual }}
-.ayusin/tasks.d/pass-git-push
-  {{- end }}
 .ayusin/tasks.d/automox-sucks
 .ayusin/tasks.d/infra-vagrant-box
 {{- else }}
-.ayusin/tasks.d/pass-git-push
 .password-store/.extensions/file.bash
 {{- end }}
 {{- if not (lookPath "wezterm") }}

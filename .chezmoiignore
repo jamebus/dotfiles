@@ -4,12 +4,7 @@ update
 {{- if eq (env "REMOTE_CONTAINERS") "true" }}
 .gitconfig
 {{- end }}
-{{- if eq .role.designation "personal" }}
-  {{- if not .role.actual }}
-.ayusin/tasks.d/pass-git-push
-  {{- end }}
-{{- else }}
-.ayusin/tasks.d/pass-git-push
+{{- if ne .role.designation "personal" }}
 .password-store
 {{- end }}
 {{- if ne .role.designation "ec" }}
