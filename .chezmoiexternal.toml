@@ -49,6 +49,10 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/glamour/refs/heads/main/themes/catppuccin-latte.json"
   refreshPeriod = "24h"
+[".config/yazi/catppuccin-latte.tmTheme"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
+  refreshPeriod = "24h"
 {{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
