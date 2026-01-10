@@ -7,9 +7,6 @@ update
 {{- if ne .role.designation "personal" }}
 .password-store
 {{- end }}
-{{- if not (lookPath "ghostty") }}
-.config/ghostty
-{{- end }}
 {{- if not (lookPath "e1s") }}
 .config/e1s
 {{- end }}

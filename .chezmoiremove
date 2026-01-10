@@ -24,17 +24,6 @@
 {{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
 {{- end }}
-{{- if not (lookPath "ghostty") }}
-.config/ghostty/config
-.config/ghostty/themes/catppuccin-latte
-.config/ghostty/themes/catppuccin-mocha
-{{- end }}
-{{- if and (ne .chezmoi.os "darwin") (lookPath "ghostty") }}
-.terminfo/67/ghostty
-.terminfo/78/xterm-ghostty
-.terminfo/x/xterm-ghostty
-.terminfo/g/ghostty
-{{- end }}
 {{- if not (lookPath "kubectl") }}
 .oh-my-zsh/custom/plugins/kubectl-config-switcher
 .kube/.kcs.history
