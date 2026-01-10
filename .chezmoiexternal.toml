@@ -16,11 +16,11 @@
   refreshPeriod = "24h"
 [".oh-my-zsh/custom/plugins/atuin/atuin.plugin.zsh"]
   type = "file"
-  url = "https://raw.githubusercontent.com/atuinsh/atuin/main/atuin.plugin.zsh"
+  url = "https://raw.githubusercontent.com/atuinsh/atuin/refs/heads/main/atuin.plugin.zsh"
   refreshPeriod = "24h"
 [".config/atuin/themes/catppuccin-latte-blue.toml"]
   type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/atuin/main/themes/latte/catppuccin-latte-blue.toml"
+  url = "https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/latte/catppuccin-latte-blue.toml"
   refreshPeriod = "24h"
 {{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
   {{- $arch := .chezmoi.arch }}
@@ -238,5 +238,5 @@
 {{- end }}
 [".config/glow/themes/catppuccin-latte.json"]
   type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/glamour/main/themes/catppuccin-latte.json"
+  url = "https://raw.githubusercontent.com/catppuccin/glamour/refs/heads/main/themes/catppuccin-latte.json"
   refreshPeriod = "24h"
