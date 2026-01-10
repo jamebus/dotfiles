@@ -7,9 +7,6 @@ update
 {{- if ne .role.designation "personal" }}
 .password-store
 {{- end }}
-{{- if ne .role.designation "ec" }}
-.ayusin/tasks.d/infra-vagrant-box
-{{- end }}
 {{- if not (lookPath "wezterm") }}
 .config/wezterm
 {{- end }}

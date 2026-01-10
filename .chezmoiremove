@@ -21,9 +21,7 @@
 .cache/gitstatus
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
-{{- if eq .role.designation "personal" }}
-.ayusin/tasks.d/infra-vagrant-box
-{{- else }}
+{{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
 {{- end }}
 {{- if not (lookPath "wezterm") }}
