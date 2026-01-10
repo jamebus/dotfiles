@@ -28,34 +28,6 @@
 .oh-my-zsh/custom/plugins/kubectl-config-switcher
 .kube/.kcs.history
 {{- end }}
-{{- if not (lookPath "nvim") }}
-.config/nvim/README.md
-.config/nvim/LICENSE
-.config/nvim/.gitignore
-.config/nvim/init.lua
-.config/nvim/stylua.toml
-.config/nvim/lua/extras/extras.lua
-.config/nvim/lua/plugins/colorscheme.lua
-.config/nvim/lua/plugins/conform.lua
-.config/nvim/lua/plugins/deadcolumn.lua
-.config/nvim/lua/plugins/mise.lua
-.config/nvim/lua/plugins/lualine.lua
-.config/nvim/lua/plugins/snacks.lua
-.config/nvim/lua/plugins/example.lua
-.config/nvim/lua/config/keymaps.lua
-.config/nvim/lua/config/options.lua
-.config/nvim/lua/config/autocmds.lua
-.config/nvim/lua/config/lazy.lua
-.config/nvim/.neoconf.json
-.config/nvim/lua/extras
-.config/nvim/lua/plugins
-.config/nvim/lua/config
-.config/nvim/lua
-.config/nvim
-.local/share/nvim
-.local/state/nvim
-.cache/nvim
-{{- end }}
 {{- if not (eq .chezmoi.os "darwin") }}
 Library/Application Support/lazygit
 {{- end }}

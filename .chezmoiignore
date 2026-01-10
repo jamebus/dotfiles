@@ -7,9 +7,6 @@ update
 {{- if ne .role.designation "personal" }}
 .password-store
 {{- end }}
-{{- if not (lookPath "nvim") }}
-.config/nvim
-{{- end }}
 {{- if not (eq .chezmoi.os "darwin") }}
 Library
 {{- end }}
