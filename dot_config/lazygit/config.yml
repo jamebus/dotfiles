@@ -2,7 +2,7 @@ git:
   skipHookPrefix: --wip--
   autoForwardBranches: none
 gui:
-  nerdFontsVersion: 3
+  nerdFontsVersion: "3"
   spinner:
     frames:
       - ⢄
@@ -12,7 +12,7 @@ gui:
       - ⡈
       - ⡐
       - ⡠
-  rate: 100
+    rate: 100
   theme:
     activeBorderColor:
       - '#df8e1d'
