@@ -22,7 +22,6 @@
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
 {{- if eq .role.designation "personal" }}
-.ayusin/tasks.d/automox-sucks
 .ayusin/tasks.d/infra-vagrant-box
 {{- else }}
 .password-store/.extensions/file.bash

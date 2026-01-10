@@ -8,7 +8,6 @@ update
 .password-store
 {{- end }}
 {{- if ne .role.designation "ec" }}
-.ayusin/tasks.d/automox-sucks
 .ayusin/tasks.d/infra-vagrant-box
 {{- end }}
 {{- if not (lookPath "wezterm") }}
