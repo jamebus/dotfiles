@@ -22,6 +22,33 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/latte/catppuccin-latte-blue.toml"
   refreshPeriod = "24h"
+{{- if eq .role.designation "personal" }}
+[".password-store/.extensions/file.bash"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/jamebus/pass-file/refs/heads/master/file.bash"
+  executable = true
+  refreshPeriod = "24h"
+{{- end }}
+[".terminfo"]
+  type = "archive"
+  url = "https://hicag.link/ghostty-terminfo"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+[".oh-my-zsh/custom/plugins/kubectl-config-switcher"]
+  type = "archive"
+  url = "https://github.com/chmouel/kubectl-config-switcher/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+[".config/k9s/skins/catppuccin-mocha.yaml"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
+  refreshPeriod = "24h"
+[".config/glow/themes/catppuccin-latte.json"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/glamour/refs/heads/main/themes/catppuccin-latte.json"
+  refreshPeriod = "24h"
 {{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
@@ -207,30 +234,3 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if eq .role.designation "personal" }}
-[".password-store/.extensions/file.bash"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/jamebus/pass-file/refs/heads/master/file.bash"
-  executable = true
-  refreshPeriod = "24h"
-{{- end }}
-[".terminfo"]
-  type = "archive"
-  url = "https://hicag.link/ghostty-terminfo"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "24h"
-[".oh-my-zsh/custom/plugins/kubectl-config-switcher"]
-  type = "archive"
-  url = "https://github.com/chmouel/kubectl-config-switcher/archive/main.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "24h"
-[".config/k9s/skins/catppuccin-mocha.yaml"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
-  refreshPeriod = "24h"
-[".config/glow/themes/catppuccin-latte.json"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/glamour/refs/heads/main/themes/catppuccin-latte.json"
-  refreshPeriod = "24h"
