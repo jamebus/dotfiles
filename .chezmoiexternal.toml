@@ -29,12 +29,14 @@
   executable = true
   refreshPeriod = "24h"
 {{- end }}
+{{- if not (eq .chezmoi.os "darwin") }}
 [".terminfo"]
   type = "archive"
   url = "https://hicag.link/ghostty-terminfo"
   exact = true
   stripComponents = 1
   refreshPeriod = "24h"
+{{- end }}
 [".oh-my-zsh/custom/plugins/kubectl-config-switcher"]
   type = "archive"
   url = "https://github.com/chmouel/kubectl-config-switcher/archive/main.tar.gz"
