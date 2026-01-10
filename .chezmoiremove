@@ -24,10 +24,6 @@
 {{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
 {{- end }}
-{{- if not (lookPath "kubectl") }}
-.oh-my-zsh/custom/plugins/kubectl-config-switcher
-.kube/.kcs.history
-{{- end }}
 {{- if not (eq .chezmoi.os "darwin") }}
 Library/Application Support/lazygit
 {{- end }}
