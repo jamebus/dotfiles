@@ -28,9 +28,6 @@
 .oh-my-zsh/custom/plugins/kubectl-config-switcher
 .kube/.kcs.history
 {{- end }}
-{{- if not (lookPath "e1s") }}
-.config/e1s/config.yml
-{{- end }}
 {{- if not (lookPath "k9s") }}
 .config/k9s/config.yml
 .config/k9s/skins/catppuccin-mocha.yaml
