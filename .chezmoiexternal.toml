@@ -1,9 +1,7 @@
-{{ if stat "/Applications/iTerm.app/Contents/PkgInfo" -}}
 [".iterm2_shell_integration.zsh"]
   type = "file"
   url = "https://iterm2.com/shell_integration/zsh"
   refreshPeriod = "24h"
-{{ end -}}
 [".oh-my-zsh"]
   type = "archive"
   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
@@ -18,11 +16,44 @@
   refreshPeriod = "24h"
 [".oh-my-zsh/custom/plugins/atuin/atuin.plugin.zsh"]
   type = "file"
-  url = "https://raw.githubusercontent.com/atuinsh/atuin/main/atuin.plugin.zsh"
+  url = "https://raw.githubusercontent.com/atuinsh/atuin/refs/heads/main/atuin.plugin.zsh"
   refreshPeriod = "24h"
 [".config/atuin/themes/catppuccin-latte-blue.toml"]
   type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/atuin/main/themes/latte/catppuccin-latte-blue.toml"
+  url = "https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/latte/catppuccin-latte-blue.toml"
+  refreshPeriod = "24h"
+{{- if eq .role.designation "personal" }}
+[".password-store/.extensions/file.bash"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/jamebus/pass-file/refs/heads/master/file.bash"
+  executable = true
+  refreshPeriod = "24h"
+{{- end }}
+{{- if not (eq .chezmoi.os "darwin") }}
+[".terminfo"]
+  type = "archive"
+  url = "https://hicag.link/ghostty-terminfo"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+{{- end }}
+[".oh-my-zsh/custom/plugins/kubectl-config-switcher"]
+  type = "archive"
+  url = "https://github.com/chmouel/kubectl-config-switcher/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"
+[".config/k9s/skins/catppuccin-mocha.yaml"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
+  refreshPeriod = "24h"
+[".config/glow/themes/catppuccin-latte.json"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/glamour/refs/heads/main/themes/catppuccin-latte.json"
+  refreshPeriod = "24h"
+[".config/yazi/catppuccin-latte.tmTheme"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
   refreshPeriod = "24h"
 {{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
   {{- $arch := .chezmoi.arch }}
@@ -208,33 +239,4 @@
   path = "zoxide"
   refreshPeriod = "24h"
   {{- end }}
-{{- end }}
-{{- if eq .role.designation "personal" }}
-[".password-store/.extensions/file.bash"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/jamebus/pass-file/refs/heads/master/file.bash"
-  executable = true
-  refreshPeriod = "24h"
-{{- end }}
-{{- if not (lookPath "ghostty") }}
-[".terminfo"]
-  type = "archive"
-  url = "https://hicag.link/ghostty-terminfo"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "24h"
-{{- end }}
-{{- if lookPath "kubectl" }}
-[".oh-my-zsh/custom/plugins/kubectl-config-switcher"]
-  type = "archive"
-  url = "https://github.com/chmouel/kubectl-config-switcher/archive/main.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "24h"
-{{- end }}
-{{- if lookPath "k9s" }}
-[".config/k9s/skins/catppuccin-mocha.yaml"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
-  refreshPeriod = "24h"
 {{- end }}

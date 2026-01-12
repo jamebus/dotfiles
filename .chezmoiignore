@@ -1,53 +1,11 @@
 install
 update
 .oh-my-zsh/cache
-{{- if not (lookPath "pag") }}
-.pagpapanatili
-{{- end }}
-{{- if not (lookPath "ayusin") }}
-.ayusin
-{{- end }}
-{{- if not (lookPath "terraform") }}
-.terraformrc
-{{- end }}
-{{- if not (lookPath "tofu") }}
-.tofurc
-{{- end }}
-{{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
-.terraform.d
-{{- end }}
-{{- if or (not (lookPath "git")) (eq (env "REMOTE_CONTAINERS") "true") }}
+{{- if eq (env "REMOTE_CONTAINERS") "true" }}
 .gitconfig
 {{- end }}
-{{- if not (lookPath "git") }}
-.gitignore-global
-{{- end }}
-{{- if eq .role.designation "personal" }}
-  {{- if not .role.actual }}
-.ayusin/tasks.d/pass-git-push
-  {{- end }}
-{{- else }}
-.ayusin/tasks.d/pass-git-push
+{{- if ne .role.designation "personal" }}
 .password-store
-{{- end }}
-{{- if ne .role.designation "ec" }}
-.ayusin/tasks.d/automox-sucks
-.ayusin/tasks.d/infra-vagrant-box
-{{- end }}
-{{- if not (lookPath "wezterm") }}
-.config/wezterm
-{{- end }}
-{{- if not (lookPath "ghostty") }}
-.config/ghostty
-{{- end }}
-{{- if not (lookPath "e1s") }}
-.config/e1s
-{{- end }}
-{{- if not (lookPath "k9s") }}
-.config/k9s
-{{- end }}
-{{- if not (lookPath "nvim") }}
-.config/nvim
 {{- end }}
 {{- if not (eq .chezmoi.os "darwin") }}
 Library

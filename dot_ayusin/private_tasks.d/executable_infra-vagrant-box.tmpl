@@ -1,3 +1,4 @@
+{{ if eq .role.designation "ec" -}}
 #!/bin/sh
 
 # shellcheck disable=SC1090
@@ -12,3 +13,4 @@ cd ~/projects/infra-configs        || task_skip
 $DRYRUN vagrant box update         || task_fail
 
 task_end
+{{ end -}}

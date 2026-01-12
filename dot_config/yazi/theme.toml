@@ -1,4 +1,3 @@
-{{ if lookPath "yazi" -}}
 # Based on https://github.com/catppuccin/yazi/blob/main/themes/latte/catppuccin-latte-blue.toml
 
 [app]
@@ -772,4 +771,3 @@ exts = [
   { name = "liquid", text = "", fg = "#40a02b" },
   { name = "zip", text = "", fg = "#df8e1d" },
 ]
-{{ end -}}

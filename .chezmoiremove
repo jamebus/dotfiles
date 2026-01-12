@@ -1,6 +1,3 @@
-{{ if not (stat "/Applications/iTerm.app/Contents/PkgInfo") -}}
-.iterm2_shell_integration.zsh
-{{ end -}}
 .aws/awsctx
 .aws/current_profile
 .awsctx
@@ -24,81 +21,8 @@
 .cache/gitstatus
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
-{{- if eq .role.designation "personal" }}
-  {{- if not .role.actual }}
-.ayusin/tasks.d/pass-git-push
-  {{- end }}
-.ayusin/tasks.d/automox-sucks
-.ayusin/tasks.d/infra-vagrant-box
-{{- else }}
-.ayusin/tasks.d/pass-git-push
+{{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
-{{- end }}
-{{- if not (lookPath "wezterm") }}
-.config/wezterm/wezterm.lua
-{{- end }}
-{{- if not (lookPath "ghostty") }}
-.config/ghostty/config
-.config/ghostty/themes/catppuccin-latte
-.config/ghostty/themes/catppuccin-mocha
-{{- end }}
-{{- if and (ne .chezmoi.os "darwin") (lookPath "ghostty") }}
-.terminfo/67/ghostty
-.terminfo/78/xterm-ghostty
-.terminfo/x/xterm-ghostty
-.terminfo/g/ghostty
-{{- end }}
-{{- if not (lookPath "kubectl") }}
-.oh-my-zsh/custom/plugins/kubectl-config-switcher
-.kube/.kcs.history
-{{- end }}
-{{- if not (lookPath "e1s") }}
-.config/e1s/config.yml
-{{- end }}
-{{- if not (lookPath "k9s") }}
-.config/k9s/config.yml
-.config/k9s/skins/catppuccin-mocha.yaml
-{{- end }}
-{{- if not (lookPath "terraform") }}
-.terraformrc
-{{- end }}
-{{- if not (lookPath "tofu") }}
-.tofurc
-{{- end }}
-{{- if not (lookPath "nvim") }}
-.config/nvim/README.md
-.config/nvim/LICENSE
-.config/nvim/.gitignore
-.config/nvim/init.lua
-.config/nvim/stylua.toml
-.config/nvim/lua/extras/extras.lua
-.config/nvim/lua/plugins/colorscheme.lua
-.config/nvim/lua/plugins/conform.lua
-.config/nvim/lua/plugins/deadcolumn.lua
-.config/nvim/lua/plugins/mise.lua
-.config/nvim/lua/plugins/lualine.lua
-.config/nvim/lua/plugins/snacks.lua
-.config/nvim/lua/plugins/example.lua
-.config/nvim/lua/config/keymaps.lua
-.config/nvim/lua/config/options.lua
-.config/nvim/lua/config/autocmds.lua
-.config/nvim/lua/config/lazy.lua
-.config/nvim/.neoconf.json
-.config/nvim/lua/extras
-.config/nvim/lua/plugins
-.config/nvim/lua/config
-.config/nvim/lua
-.config/nvim
-.local/share/nvim
-.local/state/nvim
-.cache/nvim
-{{- end }}
-{{- if and (not (lookPath "terraform")) (not (lookPath "tofu")) }}
-.terraform.d
-{{- end }}
-{{- if not (eq .chezmoi.os "darwin") }}
-Library/Application Support/lazygit
-Library/Application Support/glow
 {{- end }}
 {{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
 {{- if findExecutable "atuin" $path_without_local_bin }}
