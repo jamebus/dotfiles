@@ -43,9 +43,9 @@
   exact = true
   stripComponents = 1
   refreshPeriod = "24h"
-[".config/k9s/skins/catppuccin-mocha.yaml"]
+[".config/k9s/skins/catppuccin-latte.yaml"]
   type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-mocha.yaml"
+  url = "https://raw.githubusercontent.com/catppuccin/k9s/refs/heads/main/dist/catppuccin-latte.yaml"
   refreshPeriod = "24h"
 [".config/glow/themes/catppuccin-latte.json"]
   type = "file"

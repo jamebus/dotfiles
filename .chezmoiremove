@@ -21,6 +21,7 @@
 .cache/gitstatus
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
+.config/k9s/skins/catppuccin-mocha.yaml
 {{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
 {{- end }}
