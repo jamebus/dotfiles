@@ -12,6 +12,10 @@ return {
             hidden = true, -- show hidden files
             ignored = true, -- show files ignored by .gitignore
           },
+          grep = {
+            hidden = true, -- show hidden files
+            ignored = true, -- show files ignored by .gitignore
+          },
         },
       },
     },
