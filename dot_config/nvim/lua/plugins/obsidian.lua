@@ -27,5 +27,8 @@ return {
     ui = {
       enable = false, -- conflict with render-markdown
     },
+    note = {
+      template = vim.api.nvim_list_runtime_paths()[1] .. "/data/obsidian/default_template.md",
+    },
   },
 }
