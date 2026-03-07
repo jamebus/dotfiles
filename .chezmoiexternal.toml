@@ -55,7 +55,7 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
   refreshPeriod = "24h"
-[".config/yazi/catppuccin-latte.tmTheme"]
+[".config/yazi/Catppuccin Latte.tmTheme"]
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
   refreshPeriod = "24h"

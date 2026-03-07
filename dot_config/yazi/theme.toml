@@ -21,7 +21,7 @@ count_selected = { fg = "#eff1f5", bg = "#1e66f5" }
 border_symbol = "│"
 border_style  = { fg = "#8c8fa1" }
 
-syntect_theme = "~/.config/yazi/catppuccin-latte.tmTheme"
+syntect_theme = "~/.config/yazi/Catppuccin Latte.tmTheme"
 
 [tabs]
 active   = { fg = "#eff1f5", bg = "#4c4f69", bold = true }
