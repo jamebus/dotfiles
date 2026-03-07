@@ -16,7 +16,7 @@ COMPLETION_WAITING_DOTS='true'
 # shellcheck disable=SC2034
 SHOW_AWS_PROMPT='false'
 
-plugins=(colored-man-pages zsh-syntax-highlighting)
+plugins=(colored-man-pages)
 
 command -v ansible   >/dev/null 2>&1 && plugins+=(ansible)
 command -v aws       >/dev/null 2>&1 && plugins+=(aws)
@@ -40,6 +40,8 @@ command -v xh        >/dev/null 2>&1 && alias http='env XH_HTTPIE_COMPAT_MODE=1 
                                         alias https='env XH_HTTPIE_COMPAT_MODE=1 xhs' && \
                                         plugins+=(httpie)
 command -v zoxide    >/dev/null 2>&1 && plugins+=(zoxide) && alias cd=z
+
+plugins=(zsh-syntax-highlighting) # must be last
 
 if [ -n "$MASON" ] && [ -n "__MISE_ORIG_PATH" ]; then
 	__MISE_ORIG_PATH="${MASON}/bin:${__MISE_ORIG_PATH}"
