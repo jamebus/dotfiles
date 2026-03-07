@@ -41,7 +41,7 @@ command -v xh        >/dev/null 2>&1 && alias http='env XH_HTTPIE_COMPAT_MODE=1 
                                         plugins+=(httpie)
 command -v zoxide    >/dev/null 2>&1 && plugins+=(zoxide) && alias cd=z
 
-plugins=(zsh-syntax-highlighting) # must be last
+plugins+=(zsh-syntax-highlighting) # must be last
 
 if [ -n "$MASON" ] && [ -n "__MISE_ORIG_PATH" ]; then
 	__MISE_ORIG_PATH="${MASON}/bin:${__MISE_ORIG_PATH}"
