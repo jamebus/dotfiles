@@ -51,9 +51,17 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/glamour/refs/heads/main/themes/catppuccin-latte.json"
   refreshPeriod = "24h"
+[".config/bat/themes/Catppuccin Latte.tmTheme"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
+  refreshPeriod = "24h"
 [".config/yazi/catppuccin-latte.tmTheme"]
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
+  refreshPeriod = "24h"
+[".config/delta/themes/catppuccin.gitconfig"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/delta/refs/heads/main/catppuccin.gitconfig"
   refreshPeriod = "24h"
 [".config/bottom/bottom.toml"]
   type = "file"

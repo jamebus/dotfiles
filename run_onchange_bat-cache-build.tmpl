@@ -1,0 +1,11 @@
+{{ $theme_file := joinPath .chezmoi.homeDir ".config" "bat" "themes" "Catppuccin Latte.tmTheme" -}}
+{{ if and (lookPath "bat") (lstat $theme_file) -}}
+#!/bin/sh
+#
+# Catppuccin Latte.tmTheme: {{ include $theme_file | sha256sum }}
+#
+
+set -eu
+
+bat cache --build
+{{ end -}}
