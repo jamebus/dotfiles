@@ -252,3 +252,5 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
+
+{{- /* vim: set ft=gotmpl: */}}

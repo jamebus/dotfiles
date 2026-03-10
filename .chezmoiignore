@@ -10,3 +10,5 @@ update
 {{- if not (eq .chezmoi.os "darwin") }}
 Library
 {{- end }}
+
+{{- /* vim: set ft=gotmpl: */}}

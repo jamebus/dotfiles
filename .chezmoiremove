@@ -51,3 +51,5 @@
 {{- if findExecutable "zoxide" $path_without_local_bin }}
 .local/bin/zoxide
 {{- end }}
+
+{{- /* vim: set ft=gotmpl: */}}
