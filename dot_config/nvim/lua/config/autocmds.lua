@@ -9,6 +9,7 @@
 
 local augroup_autoformat = vim.api.nvim_create_augroup("autoformat", { clear = true })
 local augroup_commentstring = vim.api.nvim_create_augroup("commentstring", { clear = true })
+local augroup_termrequest = vim.api.nvim_create_augroup("termrequest", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "lua", "terraform", "terraform-vars", "tf" },
@@ -25,5 +26,17 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Set commentstring",
   callback = function()
     vim.bo.commentstring = "# %s"
+  end,
+})
+
+vim.api.nvim_create_autocmd("TermRequest", {
+  group = augroup_termrequest,
+  desc = "Pass through OSC 133 to terminal",
+  callback = function()
+    local request = vim.v.termrequest
+    if request:find("]133;") then
+      io.write(request)
+      io.flush()
+    end
   end,
 })
