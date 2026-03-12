@@ -20,3 +20,5 @@ vim.g.autoformat = false
 
 vim.opt.textwidth = 80
 vim.opt.colorcolumn = "+1"
+
+vim.opt.title = true
