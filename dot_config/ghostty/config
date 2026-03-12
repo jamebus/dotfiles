@@ -1,10 +1,20 @@
-font-family             = FiraCode Nerd Font Mono
-font-size               = 12
-mouse-hide-while-typing = true
-theme                   = dark:catppuccin-mocha,light:catppuccin-latte
-adjust-cursor-thickness = 3
-window-width            = 80
-window-height           = 25
-window-padding-x        = 4
-window-padding-y        = 4
-window-save-state       = always
+font-family                      = FiraCode Nerd Font Mono
+font-size                        = 12
+mouse-hide-while-typing          = true
+theme                            = dark:catppuccin-mocha,light:catppuccin-latte
+adjust-cursor-thickness          = 3
+
+window-width                     = 80
+window-height                    = 25
+window-padding-x                 = 4
+window-padding-y                 = 4
+
+window-save-state                = always
+
+notify-on-command-finish         = unfocused
+notify-on-command-finish-action  = no-bell,notify
+notify-on-command-finish-after   = 30s
+
+window-inherit-working-directory = false
+tab-inherit-working-directory    = true
+split-inherit-working-directory  = true
