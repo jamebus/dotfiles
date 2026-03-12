@@ -32,11 +32,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("TermRequest", {
   group = augroup_termrequest,
   desc = "Pass through OSC 133 to terminal",
-  callback = function()
-    local request = vim.v.termrequest
-    if request:find("]133;") then
-      io.write(request)
-      io.flush()
+  callback = function(ev)
+    local request = ev.data.sequence
+    if request:match("^\027]133;") and vim.api.nvim_ui_send then
+      vim.api.nvim_ui_send(request)
     end
   end,
 })
