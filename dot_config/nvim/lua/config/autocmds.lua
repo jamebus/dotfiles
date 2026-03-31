@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd("TermRequest", {
   desc = "Pass through OSC 133 to terminal",
   callback = function(ev)
     local request = ev.data.sequence
-    if request:match("^\027]133;") and vim.api.nvim_ui_send then
+    if request:match("^\027]133;[CD];") and vim.api.nvim_ui_send then
       vim.api.nvim_ui_send(request)
     end
   end,
