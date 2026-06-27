@@ -1,0 +1,32 @@
+font_family = "FiraCode Nerd Font Mono"
+enable_mouse_capture = true
+
+[theme]
+blockquote_bar = "▌ "
+link_desc_open = ""
+link_desc_close = ""
+link_url_open = "◖"
+link_url_close = "◗"
+horizontal_rule_char = "─"
+task_checked_mark = "[✓] "
+# https://github.com/catppuccin/catppuccin?tab=readme-ov-file#-palette
+# Latte
+blockquote_colors = [
+  "#5c5f77",                    # Subtext1
+  "#6c6f85",                    # Subtext0
+  "#7c7f93",                    # Overlay2
+  "#8c8fa1",                    # Overlay1
+  "#9ca0b0",                    # Overlay0
+  "#acb0be",                    # Surface2
+]
+link_bg = "#ffffff"             # White
+link_fg = "#1e66f5"             # Blue
+prefix_color = "#8839ef"        # Mauve
+emphasis_color = "#179299"      # Teal
+code_bg = "#eff1f5"             # Base
+code_fg = "#000000"             # Black
+hr_color = "#04a5e5"            # Sky
+table_border_color = "#209fb5"  # Sapphire
+table_header_color = "#e64553"  # Maroon
+header_color = "#fe640b"        # Peach
+hide_urls = true
