@@ -216,7 +216,13 @@
     {{- if eq .chezmoi.osRelease.id "alpine" }}
       {{- $runtime = "-musl" }}
     {{- else }}
-      {{- $runtime = "-gnu" }}
+      {{- $glibc_version := output "ldd" "--version" | splitList "\n" | first }}
+      {{- $glibc_version = regexFind "\\s\\d+\\.\\d+$" $glibc_version | trim }}
+      {{- if semverCompare ">= 2.39" $glibc_version }}
+        {{- $runtime = "-gnu" }}
+      {{- else }}
+        {{- $runtime = "-musl" }}
+      {{- end }}
     {{- end }}
   {{- end }}
   {{- $archive_url := gitHubLatestReleaseAssetURL "atuinsh/atuin" (printf "atuin-%s-*-%s%s.tar.gz" $arch .chezmoi.os $runtime) }}
