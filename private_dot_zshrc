@@ -49,8 +49,7 @@ if [ -n "$MASON" ] && [ -n "__MISE_ORIG_PATH" ]; then
 fi
 
 for f in "${ZSH}/oh-my-zsh.sh" \
-         "${ZDOTDIR:-$HOME}/.zshrc.local" \
-         "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"; do
+         "${ZDOTDIR:-$HOME}/.zshrc.local"; do
 	# shellcheck source=/dev/null
 	test -r "$f" && source "$f"
 done

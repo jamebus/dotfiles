@@ -23,6 +23,7 @@
 .terraform.d/checkpoint_signature
 .config/k9s/skins/catppuccin-mocha.yaml
 .config/yazi/catppuccin-latte.tmTheme
+.iterm2_shell_integration.zsh
 {{- if ne .role.designation "personal" }}
 .password-store/.extensions/file.bash
 {{- end }}
