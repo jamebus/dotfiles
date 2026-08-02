@@ -3,6 +3,10 @@
 # ZSH interactive shell
 #
 
+if [ -n "$GHOSTTY_RESOURCES_DIR" ]; then
+	source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
+fi
+
 command -v unbound-host >/dev/null 2>&1 && alias host=unbound-host
 
 [ "${ZDOTDIR:-}" = "$HOME" ] || ZSH="${ZSH:-${ZDOTDIR:+$ZDOTDIR/ohmyzsh}}"

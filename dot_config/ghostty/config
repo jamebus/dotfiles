@@ -9,6 +9,7 @@ window-height                    = 25
 window-padding-x                 = 4
 window-padding-y                 = 4
 
+shell-integration                = none
 window-save-state                = always
 
 notify-on-command-finish         = unfocused
