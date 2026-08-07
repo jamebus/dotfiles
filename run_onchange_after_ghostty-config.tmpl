@@ -1,0 +1,13 @@
+{{ if (lookPath "ghostty") -}}
+#!/bin/sh
+
+# ghostty/config: {{ include "dot_config/ghostty/config" | sha256sum }}
+
+set -eu
+
+{{ if eq .chezmoi.os "darwin" -}}
+pkill -SIGUSR2 -ax -U "$USER" ghostty
+{{ else if eq .chezmoi.os "linux" -}}
+pkill -SIGUSR2 -x -U "$USER" ghostty
+{{ end -}}
+{{ end -}}
