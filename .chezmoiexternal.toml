@@ -63,7 +63,8 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/bottom/refs/heads/main/themes/latte.toml"
   refreshPeriod = "24h"
-{{- if or (findExecutable "starship" (list ".local/bin")) (not (lookPath "starship")) }}
+{{- $path_without_local_bin := without (splitList .chezmoi.pathListSeparator (env "PATH")) (joinPath .chezmoi.homeDir ".local" "bin") }}
+{{- if not (findExecutable "starship" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq .chezmoi.os "linux" }}{{ $runtime = "-musl" }}{{ end }}
@@ -90,7 +91,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if or (findExecutable "eza" (list ".local/bin")) (not (lookPath "eza")) }}
+{{- if not (findExecutable "eza" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
@@ -120,7 +121,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if or (findExecutable "fd" (list ".local/bin")) (not (lookPath "fd")) }}
+{{- if not (findExecutable "fd" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
@@ -151,7 +152,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if or (findExecutable "fzf" (list ".local/bin")) (not (lookPath "fzf")) }}
+{{- if not (findExecutable "fzf" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- if eq $arch "arm" }}
     {{- $arch = "armv7" }}
@@ -165,7 +166,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if or (findExecutable "rg" (list ".local/bin")) (not (lookPath "rg")) }}
+{{- if not (findExecutable "rg" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
@@ -200,7 +201,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if or (findExecutable "atuin" (list ".local/bin")) (not (lookPath "atuin")) }}
+{{- if not (findExecutable "atuin" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
@@ -231,7 +232,7 @@
   refreshPeriod = "24h"
   {{- end }}
 {{- end }}
-{{- if or (findExecutable "zoxide" (list ".local/bin")) (not (lookPath "zoxide")) }}
+{{- if not (findExecutable "zoxide" $path_without_local_bin) }}
   {{- $arch := .chezmoi.arch }}
   {{- $runtime := "" }}
   {{- if eq $arch "arm64" }}
