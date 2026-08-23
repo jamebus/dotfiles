@@ -51,10 +51,16 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
   refreshPeriod = "24h"
-[".config/yazi/Catppuccin Latte.tmTheme"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Latte.tmTheme"
+[".config/yazi/flavors"]
+  type = "archive"
+  url = "https://github.com/yazi-rs/flavors/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
   refreshPeriod = "24h"
+  include = [
+    "flavors-main/catppuccin-latte.yazi/**",
+    "flavors-main/catppuccin-mocha.yazi/**"
+  ]
 [".config/delta/themes/catppuccin.gitconfig"]
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/delta/refs/heads/main/catppuccin.gitconfig"
