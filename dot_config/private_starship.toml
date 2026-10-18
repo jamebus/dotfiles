@@ -97,6 +97,7 @@ $azure\
 $direnv\
 $env_var\
 $mise\
+${env_var.mise_no_hooks}\
 $crystal\
 $custom\
 $sudo\
@@ -253,6 +254,11 @@ symbol = "󰍛 "
 
 [meson]
 symbol = "󰔷 "
+
+[mise]
+disabled = false
+symbol = "󰭼 "
+style = "bold maroon"
 
 [mojo]
 symbol = "󰈸 "
@@ -457,6 +463,13 @@ command = '''jq -r '(.Name | select(. != null and . != "")) // .Key' ~/.docker/b
 symbol = " "
 style = "blue bold"
 format = "via [$symbol($output)]($style) "
+
+[env_var.mise_no_hooks]
+description = "mise hooks state"
+variable = "MISE_NO_HOOKS"
+symbol = "󰛣 "
+style = "bold maroon"
+format = "[${symbol}no hooks]($style) "
 
 # https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/latte.toml
 [palettes.catppuccin_latte]
