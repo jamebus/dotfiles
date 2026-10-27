@@ -256,7 +256,6 @@ symbol = "󰍛 "
 symbol = "󰔷 "
 
 [mise]
-disabled = false
 symbol = "󰭼 "
 style = "bold maroon"
 
